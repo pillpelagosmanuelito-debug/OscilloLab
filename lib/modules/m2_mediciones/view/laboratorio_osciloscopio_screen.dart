@@ -22,7 +22,7 @@ class LaboratorioOsciloscopioScreen extends ConsumerWidget {
         padding: const EdgeInsets.all(16),
         children: [
           DropdownButtonFormField<EscenarioOsciloscopio>(
-            initialValue: estado.escenario,
+            value: estado.escenario,
             decoration: const InputDecoration(labelText: 'Escenario de medicion'),
             items: escenariosOsciloscopio
                 .map((e) => DropdownMenuItem(value: e, child: Text(e.descripcion, overflow: TextOverflow.ellipsis)))

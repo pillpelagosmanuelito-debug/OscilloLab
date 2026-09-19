@@ -17,7 +17,7 @@ class OsciloscopioPantallaWidget extends StatelessWidget {
         decoration: BoxDecoration(
           color: const Color(0xFF06120A),
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: AppTheme.verdeFosforo.withValues(alpha: 0.3)),
+          border: Border.all(color: AppTheme.verdeFosforo.withOpacity(0.3)),
         ),
         child: CustomPaint(
           painter: _OsciloscopioPainter(muestras: muestras),
@@ -40,7 +40,7 @@ class _OsciloscopioPainter extends CustomPainter {
 
   void _dibujarGrilla(Canvas canvas, Size size) {
     final Paint lineaGrilla = Paint()
-      ..color = AppTheme.verdeFosforo.withValues(alpha: 0.15)
+      ..color = AppTheme.verdeFosforo.withOpacity(0.15)
       ..strokeWidth = 1;
     const int divisiones = 8;
     for (int i = 1; i < divisiones; i++) {
@@ -50,7 +50,7 @@ class _OsciloscopioPainter extends CustomPainter {
       canvas.drawLine(Offset(0, y), Offset(size.width, y), lineaGrilla);
     }
     final Paint ejeCentral = Paint()
-      ..color = AppTheme.verdeFosforo.withValues(alpha: 0.35)
+      ..color = AppTheme.verdeFosforo.withOpacity(0.35)
       ..strokeWidth = 1.4;
     canvas.drawLine(Offset(0, size.height / 2), Offset(size.width, size.height / 2), ejeCentral);
   }

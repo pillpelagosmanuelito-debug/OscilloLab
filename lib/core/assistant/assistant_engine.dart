@@ -1,5 +1,6 @@
 import '../measurement/calibration_engine.dart';
 import '../measurement/instrument_model.dart';
+import '../measurement/units.dart';
 import 'assistant_message.dart';
 
 /// Asistente tecnico por reglas (sistema experto, sin IA generativa).

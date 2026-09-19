@@ -33,7 +33,7 @@ class _PropagacionScreenState extends ConsumerState<PropagacionScreen> {
         padding: const EdgeInsets.all(20),
         children: [
           DropdownButtonFormField<CasoPropagacion>(
-            initialValue: estado.caso,
+            value: estado.caso,
             decoration: const InputDecoration(labelText: 'Caso'),
             items: casosPropagacion
                 .map((c) => DropdownMenuItem(value: c, child: Text(c.descripcion, overflow: TextOverflow.ellipsis)))
@@ -93,8 +93,8 @@ class _PropagacionScreenState extends ConsumerState<PropagacionScreen> {
             const SizedBox(height: 16),
             Card(
               color: (estado.aciertoValor! && estado.aciertoIncertidumbre!)
-                  ? Colors.green.withValues(alpha: 0.15)
-                  : Colors.orange.withValues(alpha: 0.15),
+                  ? Colors.green.withOpacity(0.15)
+                  : Colors.orange.withOpacity(0.15),
               child: Padding(
                 padding: const EdgeInsets.all(16),
                 child: Column(

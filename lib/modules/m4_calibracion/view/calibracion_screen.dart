@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/measurement/units.dart';
 import '../../../shared/state/progress_provider.dart';
 import '../../../shared/widgets/tarjeta_asistente_widget.dart';
 import '../model/calibration_case.dart';
@@ -20,7 +21,7 @@ class CalibracionScreen extends ConsumerWidget {
         padding: const EdgeInsets.all(20),
         children: [
           DropdownButtonFormField<CasoCalibracion>(
-            initialValue: estado.caso,
+            value: estado.caso,
             decoration: const InputDecoration(labelText: 'Instrumento a calibrar'),
             items: casosCalibracion
                 .map((c) => DropdownMenuItem(value: c, child: Text(c.descripcion, overflow: TextOverflow.ellipsis)))

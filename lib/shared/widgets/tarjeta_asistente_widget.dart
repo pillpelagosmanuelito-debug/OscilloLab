@@ -18,7 +18,7 @@ class TarjetaAsistenteWidget extends StatelessWidget {
       TipoMensajeAsistente.consejo => Colors.blueAccent,
     };
     return Card(
-      color: color.withValues(alpha: 0.12),
+      color: color.withOpacity(0.12),
       child: Padding(
         padding: const EdgeInsets.all(14),
         child: Row(

@@ -14,6 +14,7 @@ class CasoIndustrial {
     required this.valorReal,
     required this.rango,
     required this.umbralAccion,
+    required this.alertaSiMayorQueUmbral,
     required this.opcionesAccion,
     required this.accionCorrectaId,
     required this.justificacionAccion,

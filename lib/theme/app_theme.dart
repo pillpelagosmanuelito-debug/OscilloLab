@@ -25,7 +25,6 @@ class AppTheme {
       error: rojoAlerta,
       surface: panel,
     );
-    final TextTheme base = GoogleFonts.jetBrainsMonoTextTheme();
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
@@ -37,14 +36,14 @@ class AppTheme {
         foregroundColor: verdeFosforo,
         elevation: 0,
       ),
-      cardTheme: CardThemeData(
+      cardTheme: CardTheme(
         color: panel,
         elevation: 2,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
       ),
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: panel,
-        indicatorColor: verdeFosforo.withValues(alpha: 0.25),
+        indicatorColor: verdeFosforo.withOpacity(0.25),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(

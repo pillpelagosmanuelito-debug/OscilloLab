@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/measurement/units.dart';
 import '../../../shared/state/progress_provider.dart';
 import '../model/industrial_case.dart';
 import '../viewmodel/casos_viewmodel.dart';

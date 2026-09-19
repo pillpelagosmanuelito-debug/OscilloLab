@@ -33,7 +33,7 @@ class _AsistentePanelState extends State<AsistentePanel> {
         padding: const EdgeInsets.all(20),
         children: [
           Card(
-            color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.1),
+            color: Theme.of(context).colorScheme.secondary.withOpacity(0.1),
             child: const Padding(
               padding: EdgeInsets.all(16),
               child: Text(

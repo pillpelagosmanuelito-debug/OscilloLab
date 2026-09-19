@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/measurement/units.dart';
 import '../../../shared/state/progress_provider.dart';
 import '../../../shared/widgets/tarjeta_asistente_widget.dart';
 import '../model/scenario_catalog.dart';
@@ -22,7 +23,7 @@ class LaboratorioMultimetroScreen extends ConsumerWidget {
         padding: const EdgeInsets.all(16),
         children: [
           DropdownButtonFormField<EscenarioMultimetro>(
-            initialValue: estado.escenario,
+            value: estado.escenario,
             decoration: const InputDecoration(labelText: 'Escenario de medicion'),
             items: escenariosMultimetro
                 .map((e) => DropdownMenuItem(value: e, child: Text(e.descripcion, overflow: TextOverflow.ellipsis)))

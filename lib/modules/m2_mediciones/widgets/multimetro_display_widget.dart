@@ -32,20 +32,20 @@ class MultimetroDisplayWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppTheme.grafito,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppTheme.verdeFosforo.withValues(alpha: 0.4)),
+        border: Border.all(color: AppTheme.verdeFosforo.withOpacity(0.4)),
       ),
       child: Column(
         children: [
           Text(texto, style: AppTheme.textoDisplay),
           const SizedBox(height: 4),
-          Text(unidad, style: TextStyle(color: AppTheme.verdeFosforo.withValues(alpha: 0.7))),
+          Text(unidad, style: TextStyle(color: AppTheme.verdeFosforo.withOpacity(0.7))),
           if (resultado != null && resultado!.enRango) ...[
             const SizedBox(height: 6),
             Text(
               '± ${resultado!.incertidumbre.toStringAsFixed(_decimalesVisibles)} (k=2)',
               style: TextStyle(
                 fontSize: 12,
-                color: AppTheme.ambarMultimetro.withValues(alpha: 0.9),
+                color: AppTheme.ambarMultimetro.withOpacity(0.9),
               ),
             ),
           ],

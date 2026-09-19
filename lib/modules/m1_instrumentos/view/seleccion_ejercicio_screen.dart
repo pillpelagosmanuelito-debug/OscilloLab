@@ -80,9 +80,9 @@ class SeleccionEjercicioScreen extends ConsumerWidget {
               Color? color;
               if (respondido) {
                 if (idOpcion == escenario.idCorrectoId) {
-                  color = Colors.green.withValues(alpha: 0.25);
+                  color = Colors.green.withOpacity(0.25);
                 } else if (esEstaLaElegida) {
-                  color = Colors.red.withValues(alpha: 0.25);
+                  color = Colors.red.withOpacity(0.25);
                 }
               }
               return Padding(
