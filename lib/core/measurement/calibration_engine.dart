@@ -1,4 +1,4 @@
-/// Resultado de una calibracion de dos puntos: la ganancia y el offset
+/// Resultado de una calibración de dos puntos: la ganancia y el offset
 /// estimados de un instrumento a partir de dos patrones de referencia
 /// conocidos.
 class CalibracionEstimada {
@@ -7,7 +7,7 @@ class CalibracionEstimada {
   final double ganancia;
   final double offset;
 
-  /// Un instrumento se considera "dentro de tolerancia" si su ganancia esta
+  /// Un instrumento se considera "dentro de tolerancia" si su ganancia está
   /// a menos de [toleranciaGanancia] de 1.0 y su offset a menos de
   /// [toleranciaOffset] de 0.0.
   bool dentroDeTolerancia({
@@ -19,19 +19,19 @@ class CalibracionEstimada {
   }
 }
 
-/// Calibracion de dos puntos: dados dos patrones de referencia conocidos
+/// Calibración de dos puntos: dados dos patrones de referencia conocidos
 /// (valor bajo y valor alto) y el promedio de varias lecturas del
-/// instrumento en cada patron, resuelve el sistema lineal
+/// instrumento en cada patrón, resuelve el sistema lineal
 ///
 ///   lecturaPromedio = ganancia * valorReal + offset
 ///
-/// para (ganancia, offset). Este es el mismo procedimiento que un tecnico
-/// de instrumentacion real usa para calibrar un multimetro contra un
-/// patron trazable.
+/// para (ganancia, offset). Este es el mismo procedimiento que un técnico
+/// de instrumentación real usa para calibrar un multímetro contra un
+/// patrón trazable.
 ///
-/// Validado estadisticamente en `calib/measurement_model.py`
+/// Validado estadísticamente en `calib/measurement_model.py`
 /// (test_two_point_calibration): con ganancia inyectada 1.05 y offset
-/// inyectado 0.15, la estimacion recupera 1.04999... y 0.15035...
+/// inyectado 0.15, la estimación recupera 1.04999... y 0.15035...
 class CalibrationEngine {
   static CalibracionEstimada calibrarDosPuntos({
     required double patronBajo,

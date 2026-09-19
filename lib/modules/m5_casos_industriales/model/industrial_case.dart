@@ -1,9 +1,9 @@
 import '../../../core/measurement/instrument_range.dart';
 import '../../../core/measurement/units.dart';
 
-/// Caso industrial del Modulo 5: combina seleccion de instrumento,
-/// medicion e interpretacion en un escenario de instrumentacion,
-/// control o automatizacion, tal como lo exige el encargo.
+/// Caso industrial del Módulo 5: combina selección de instrumento,
+/// medición e interpretación en un escenario de instrumentación,
+/// control o automatización, tal como lo exige el encargo.
 class CasoIndustrial {
   const CasoIndustrial({
     required this.id,
@@ -30,15 +30,15 @@ class CasoIndustrial {
   final double valorReal;
   final InstrumentRange rango;
 
-  /// Umbral que separa "accion normal" de "accion de alerta", evaluado
+  /// Umbral que separa "acción normal" de "acción de alerta", evaluado
   /// sobre la LECTURA del instrumento (no sobre valorReal directamente),
   /// para que el estudiante decida en base a lo que el instrumento
-  /// realmente reporto.
+  /// realmente reportó.
   final double umbralAccion;
 
   /// true: se activa la alerta cuando la LECTURA supera el umbral (p. ej.
   /// temperatura, rizado). false: se activa cuando la lectura es MENOR
-  /// que el umbral (p. ej. distancia al liquido: mas cerca = mas lleno).
+  /// que el umbral (p. ej. distancia al líquido: más cerca = más lleno).
   final bool alertaSiMayorQueUmbral;
   final List<MapEntry<String, String>> opcionesAccion;
   final String accionCorrectaId;
@@ -55,16 +55,16 @@ const List<CasoIndustrial> casosIndustriales = [
   CasoIndustrial(
     id: 'sobretemperatura_motor',
     contexto: 'Un motor de una banda transportadora lleva 3 horas en '
-        'operacion continua. El protocolo exige verificar su temperatura '
+        'operación continua. El protocolo exige verificar su temperatura '
         'de carcasa antes de autorizar otra hora de trabajo.',
     opcionesInstrumento: [
       MapEntry('sensor_temperatura', 'Sensor de temperatura'),
       MapEntry('osciloscopio', 'Osciloscopio'),
-      MapEntry('multimetro', 'Multimetro (solo voltaje)'),
+      MapEntry('multimetro', 'Multímetro (solo voltaje)'),
     ],
     instrumentoCorrectoId: 'sensor_temperatura',
-    justificacionInstrumento: 'Se necesita una medicion directa de '
-        'temperatura; un osciloscopio o un multimetro en voltaje no miden '
+    justificacionInstrumento: 'Se necesita una medición directa de '
+        'temperatura; un osciloscopio o un multímetro en voltaje no miden '
         'esa magnitud sin un sensor intermedio.',
     valorReal: 92.0,
     rango: InstrumentRange(
@@ -76,28 +76,28 @@ const List<CasoIndustrial> casosIndustriales = [
     umbralAccion: 85.0,
     alertaSiMayorQueUmbral: true,
     opcionesAccion: [
-      MapEntry('continuar', 'Autorizar otra hora de operacion sin cambios'),
+      MapEntry('continuar', 'Autorizar otra hora de operación sin cambios'),
       MapEntry(
           'detener', 'Detener el motor y dejarlo enfriar antes de continuar'),
-      MapEntry('ignorar', 'Ignorar la lectura, es solo una fluctuacion'),
+      MapEntry('ignorar', 'Ignorar la lectura, es solo una fluctuación'),
     ],
     accionCorrectaId: 'detener',
     justificacionAccion: 'Por encima del umbral de 85°C el motor entra en '
-        'zona de riesgo termico: la accion correcta es detenerlo, no '
+        'zona de riesgo térmico: la acción correcta es detenerlo, no '
         'continuar ni ignorar la lectura.',
   ),
   CasoIndustrial(
     id: 'ripple_fuente_switching',
-    contexto: 'Una fuente de conmutacion (switching) alimenta un PLC. Se '
+    contexto: 'Una fuente de conmutación (switching) alimenta un PLC. Se '
         'reportan reinicios intermitentes del PLC y se sospecha de rizado '
         'excesivo en la salida DC.',
     opcionesInstrumento: [
       MapEntry('osciloscopio', 'Osciloscopio'),
-      MapEntry('multimetro', 'Multimetro en DC'),
-      MapEntry('sensor_ultrasonico', 'Sensor ultrasonico'),
+      MapEntry('multimetro', 'Multímetro en DC'),
+      MapEntry('sensor_ultrasonico', 'Sensor ultrasónico'),
     ],
     instrumentoCorrectoId: 'osciloscopio',
-    justificacionInstrumento: 'El multimetro en DC promedia y puede '
+    justificacionInstrumento: 'El multímetro en DC promedia y puede '
         'ocultar el rizado de alta frecuencia; solo el osciloscopio '
         'muestra la componente AC superpuesta en el tiempo.',
     valorReal: 0.62,
@@ -110,29 +110,29 @@ const List<CasoIndustrial> casosIndustriales = [
     umbralAccion: 0.3,
     alertaSiMayorQueUmbral: true,
     opcionesAccion: [
-      MapEntry('continuar', 'Rizado normal, no requiere accion'),
+      MapEntry('continuar', 'Rizado normal, no requiere acción'),
       MapEntry('revisar_filtro',
           'Revisar/reemplazar el capacitor de filtro de salida'),
       MapEntry('cambiar_plc', 'Cambiar el PLC, el problema es del controlador'),
     ],
     accionCorrectaId: 'revisar_filtro',
     justificacionAccion: 'Un rizado por encima de 0.3 Vpp en una fuente '
-        'que deberia ser DC limpia indica falla de filtrado, tipicamente '
+        'que debería ser DC limpia indica falla de filtrado, típicamente '
         'un capacitor de salida degradado, no una falla del PLC.',
   ),
   CasoIndustrial(
     id: 'nivel_tanque_automatizacion',
-    contexto: 'Un sistema de automatizacion debe detener el llenado de un '
-        'tanque cuando el nivel de liquido se acerca a la boca superior.',
+    contexto: 'Un sistema de automatización debe detener el llenado de un '
+        'tanque cuando el nivel de líquido se acerca a la boca superior.',
     opcionesInstrumento: [
-      MapEntry('sensor_ultrasonico', 'Sensor ultrasonico'),
-      MapEntry('multimetro', 'Multimetro'),
+      MapEntry('sensor_ultrasonico', 'Sensor ultrasónico'),
+      MapEntry('multimetro', 'Multímetro'),
       MapEntry('sensor_temperatura', 'Sensor de temperatura'),
     ],
     instrumentoCorrectoId: 'sensor_ultrasonico',
     justificacionInstrumento: 'Se necesita distancia sin contacto entre el '
-        'sensor y la superficie del liquido; eso es exactamente lo que '
-        'entrega un sensor ultrasonico.',
+        'sensor y la superficie del líquido; eso es exactamente lo que '
+        'entrega un sensor ultrasónico.',
     valorReal: 4.5,
     rango: InstrumentRange(
         etiqueta: '50 cm',
@@ -148,8 +148,8 @@ const List<CasoIndustrial> casosIndustriales = [
       MapEntry('vaciar', 'Vaciar el tanque por completo'),
     ],
     accionCorrectaId: 'detener_llenado',
-    justificacionAccion: 'La distancia leida es MENOR que el umbral de '
-        '6 cm (mas cerca de la boca del tanque = mas lleno): el sistema '
+    justificacionAccion: 'La distancia leída es MENOR que el umbral de '
+        '6 cm (más cerca de la boca del tanque = más lleno): el sistema '
         'debe detener el llenado para evitar derrame.',
   ),
 ];

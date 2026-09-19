@@ -2,9 +2,9 @@ import '../../../core/measurement/instrument_model.dart';
 import '../../../core/measurement/instrument_range.dart';
 import '../../../core/measurement/units.dart';
 
-/// Caso del Modulo 3: un patron de referencia real (oculto) y un
+/// Caso del Módulo 3: un patrón de referencia real (oculto) y un
 /// instrumento con cierto comportamiento (bien calibrado + ruidoso, o
-/// descalibrado). El estudiante NO ve gananciaOffset ni el patron: solo
+/// descalibrado). El estudiante NO ve gananciaOffset ni el patrón: solo
 /// ve las lecturas que el instrumento reporta, igual que en un
 /// laboratorio real.
 class CasoError {
@@ -38,7 +38,7 @@ const List<CasoError> casosError = [
   CasoError(
     id: 'ruido_normal',
     descripcion:
-        'Multimetro bien calibrado midiendo una fuente estable de referencia.',
+        'Multímetro bien calibrado midiendo una fuente estable de referencia.',
     patronReferencia: 10.0,
     rango: InstrumentRange(
         etiqueta: '20 V',
@@ -50,7 +50,7 @@ const List<CasoError> casosError = [
   CasoError(
     id: 'offset_descalibrado',
     descripcion:
-        'Multimetro con sospecha de descalibracion midiendo la misma fuente de referencia.',
+        'Multímetro con sospecha de descalibración midiendo la misma fuente de referencia.',
     patronReferencia: 10.0,
     rango: InstrumentRange(
         etiqueta: '20 V',
@@ -64,7 +64,7 @@ const List<CasoError> casosError = [
   CasoError(
     id: 'ganancia_descalibrada',
     descripcion:
-        'Pinza amperometrica con sospecha de error de ganancia, midiendo una corriente patron.',
+        'Pinza amperométrica con sospecha de error de ganancia, midiendo una corriente patrón.',
     patronReferencia: 5.0,
     rango: InstrumentRange(
         etiqueta: '20 A',
@@ -78,7 +78,7 @@ const List<CasoError> casosError = [
   CasoError(
     id: 'ruido_alto',
     descripcion:
-        'Sensor de temperatura en ambiente con mucha interferencia electromagnetica.',
+        'Sensor de temperatura en ambiente con mucha interferencia electromagnética.',
     patronReferencia: 75.0,
     rango: InstrumentRange(
         etiqueta: '150 °C',

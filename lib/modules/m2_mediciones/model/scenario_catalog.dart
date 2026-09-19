@@ -1,7 +1,7 @@
 import '../../../core/measurement/instrument_range.dart';
 import '../../../core/measurement/units.dart';
 
-/// Escenario de medicion con multimetro: una magnitud real OCULTA al
+/// Escenario de medición con multímetro: una magnitud real OCULTA al
 /// estudiante y un conjunto de rangos entre los que debe elegir.
 class EscenarioMultimetro {
   const EscenarioMultimetro({
@@ -13,14 +13,14 @@ class EscenarioMultimetro {
 
   final String id;
   final String descripcion;
-  final double valorReal; // Oculto: solo el motor de medicion lo usa.
+  final double valorReal; // Oculto: solo el motor de medición lo usa.
   final List<InstrumentRange> rangos;
 }
 
 const List<EscenarioMultimetro> escenariosMultimetro = [
   EscenarioMultimetro(
     id: 'fuente_12v',
-    descripcion: 'Fuente de alimentacion DC de un PLC industrial.',
+    descripcion: 'Fuente de alimentación DC de un PLC industrial.',
     valorReal: 12.34,
     rangos: [
       InstrumentRange(
@@ -45,7 +45,7 @@ const List<EscenarioMultimetro> escenariosMultimetro = [
   ),
   EscenarioMultimetro(
     id: 'bateria_debil',
-    descripcion: 'Bateria de respaldo de 9V, posiblemente descargada.',
+    descripcion: 'Batería de respaldo de 9V, posiblemente descargada.',
     valorReal: 7.62,
     rangos: [
       InstrumentRange(
@@ -96,7 +96,7 @@ const List<EscenarioMultimetro> escenariosMultimetro = [
   EscenarioMultimetro(
     id: 'motor_dc_corriente',
     descripcion:
-        'Corriente de arranque de un motor DC pequeno en un banco de pruebas.',
+        'Corriente de arranque de un motor DC pequeño en un banco de pruebas.',
     valorReal: 0.845,
     rangos: [
       InstrumentRange(
@@ -115,7 +115,7 @@ const List<EscenarioMultimetro> escenariosMultimetro = [
   ),
 ];
 
-/// Escenario de medicion con osciloscopio: una senal periodica real OCULTA
+/// Escenario de medición con osciloscopio: una señal periódica real OCULTA
 /// (amplitud pico-pico y frecuencia) que el estudiante debe medir usando
 /// cursores sobre la forma de onda mostrada.
 class EscenarioOsciloscopio {
@@ -141,7 +141,7 @@ class EscenarioOsciloscopio {
 const List<EscenarioOsciloscopio> escenariosOsciloscopio = [
   EscenarioOsciloscopio(
     id: 'pwm_motor',
-    descripcion: 'Senal PWM que controla la velocidad de un motor DC.',
+    descripcion: 'Señal PWM que controla la velocidad de un motor DC.',
     amplitudPicoPicoReal: 5.0,
     frecuenciaHzReal: 1000,
     formaOnda: 'cuadrada',
@@ -160,7 +160,7 @@ const List<EscenarioOsciloscopio> escenariosOsciloscopio = [
   ),
   EscenarioOsciloscopio(
     id: 'senal_sensor',
-    descripcion: 'Salida analogica senoidal de un sensor de vibracion.',
+    descripcion: 'Salida analógica senoidal de un sensor de vibración.',
     amplitudPicoPicoReal: 2.4,
     frecuenciaHzReal: 60,
     formaOnda: 'seno',
@@ -179,7 +179,7 @@ const List<EscenarioOsciloscopio> escenariosOsciloscopio = [
   ),
   EscenarioOsciloscopio(
     id: 'ripple_fuente',
-    descripcion: 'Rizado (ripple) superpuesto en una fuente DC de conmutacion.',
+    descripcion: 'Rizado (ripple) superpuesto en una fuente DC de conmutación.',
     amplitudPicoPicoReal: 0.35,
     frecuenciaHzReal: 50000,
     formaOnda: 'seno',

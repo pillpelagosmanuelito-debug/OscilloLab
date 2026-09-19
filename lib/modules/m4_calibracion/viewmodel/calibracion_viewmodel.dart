@@ -48,8 +48,8 @@ class CalibracionNotifier extends Notifier<CalibracionState> {
 
   void elegirCaso(CasoCalibracion caso) => state = CalibracionState(caso: caso);
 
-  /// Toma [muestrasPorPatron] lecturas en cada patron de referencia y
-  /// resuelve la calibracion de dos puntos, exactamente el mismo
+  /// Toma [muestrasPorPatron] lecturas en cada patrón de referencia y
+  /// resuelve la calibración de dos puntos, exactamente el mismo
   /// procedimiento validado en calib/measurement_model.py
   /// (test_two_point_calibration).
   void medirYCalibrar() {

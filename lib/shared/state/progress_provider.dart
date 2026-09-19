@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// Progreso del estudiante por modulo, persistido localmente.
-/// Claves: 'm1', 'm2', 'm3', 'm4', 'm5'. Valor: numero de ejercicios
-/// completados correctamente en ese modulo.
+/// Progreso del estudiante por módulo, persistido localmente.
+/// Claves: 'm1', 'm2', 'm3', 'm4', 'm5'. Valor: número de ejercicios
+/// completados correctamente en ese módulo.
 class ProgresoState {
   const ProgresoState({required this.completados});
 

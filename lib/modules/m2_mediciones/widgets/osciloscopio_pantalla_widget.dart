@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../theme/app_theme.dart';
 
 /// Dibuja una pantalla de osciloscopio con grilla (divisiones) y la
-/// forma de onda muestreada, imitando un display real de fosforo verde.
+/// forma de onda muestreada, imitando un display real de fósforo verde.
 class OsciloscopioPantallaWidget extends StatelessWidget {
   const OsciloscopioPantallaWidget({super.key, required this.muestras});
 

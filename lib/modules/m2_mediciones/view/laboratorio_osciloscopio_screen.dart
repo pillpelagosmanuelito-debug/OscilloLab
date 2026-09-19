@@ -25,7 +25,7 @@ class LaboratorioOsciloscopioScreen extends ConsumerWidget {
           DropdownButtonFormField<EscenarioOsciloscopio>(
             value: estado.escenario,
             decoration:
-                const InputDecoration(labelText: 'Escenario de medicion'),
+                const InputDecoration(labelText: 'Escenario de medición'),
             items: escenariosOsciloscopio
                 .map((e) => DropdownMenuItem(
                     value: e,
@@ -76,7 +76,7 @@ class LaboratorioOsciloscopioScreen extends ConsumerWidget {
               onPressed: () => ref
                   .read(progresoProvider.notifier)
                   .registrarEjercicioCompletado('m2'),
-              child: const Text('Marcar medicion como completada'),
+              child: const Text('Marcar medición como completada'),
             ),
           ],
         ],

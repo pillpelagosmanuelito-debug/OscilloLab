@@ -4,12 +4,12 @@ import '../../assistant/view/asistente_panel.dart';
 import 'inicio_screen.dart';
 import 'progreso_screen.dart';
 
-/// Cascaron de navegacion principal de OscilloLab: barra inferior de 3
+/// Cascarón de navegación principal de OscilloLab: barra inferior de 3
 /// destinos (Inicio, Progreso, Asistente). A diferencia de las apps
-/// anteriores de la fabrica (que usan un Drawer lateral con la lista de
-/// modulos), aqui los 5 modulos viven como tarjetas dentro de "Inicio" y
+/// anteriores de la fábrica (que usan un Drawer lateral con la lista de
+/// módulos), aquí los 5 módulos viven como tarjetas dentro de "Inicio" y
 /// se navega a cada uno en una pantalla completa, para que la estructura
-/// de navegacion no se vea igual entre proyectos.
+/// de navegación no se vea igual entre proyectos.
 class HomeShell extends StatefulWidget {
   const HomeShell({super.key});
 

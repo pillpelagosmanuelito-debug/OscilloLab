@@ -37,13 +37,13 @@ void main() {
     });
 
     test(
-        'clasifica como sistematico cuando el promedio no reduce la discrepancia',
+        'clasifica como sistemático cuando el promedio no reduce la discrepancia',
         () {
       final String clasificacion = ErrorPropagation.clasificarError(
         desviacionUnaLectura: 0.5,
         desviacionPromedioNLecturas: 0.48,
       );
-      expect(clasificacion, 'sistematico');
+      expect(clasificacion, 'sistemático');
     });
   });
 }

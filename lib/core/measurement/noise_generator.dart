@@ -1,10 +1,10 @@
 import 'dart:math';
 
 /// Generador de ruido gaussiano (Box-Muller) para simular el ruido
-/// electronico y de cuantizacion de un instrumento real.
+/// electrónico y de cuantización de un instrumento real.
 ///
-/// Se usa una unica instancia con semilla opcional para que las pruebas
-/// unitarias sean reproducibles; en produccion se usa sin semilla.
+/// Se usa una única instancia con semilla opcional para que las pruebas
+/// unitarias sean reproducibles; en producción se usa sin semilla.
 class NoiseGenerator {
   NoiseGenerator({int? seed})
       : _random = seed != null ? Random(seed) : Random();
@@ -12,7 +12,7 @@ class NoiseGenerator {
   final Random _random;
   double? _spare;
 
-  /// Devuelve una muestra de una distribucion normal N(0, sigma^2).
+  /// Devuelve una muestra de una distribución normal N(0, sigma^2).
   double gaussian(double sigma) {
     if (sigma <= 0) return 0.0;
     if (_spare != null) {

@@ -1,6 +1,6 @@
 import 'dart:math';
 
-/// Utilidades de propagacion de incertidumbre para el Modulo 3 (Errores).
+/// Utilidades de propagación de incertidumbre para el Módulo 3 (Errores).
 ///
 /// Cuando una magnitud se calcula a partir de otras medidas (p. ej.
 /// potencia P = V * I), su incertidumbre no es la suma simple de las
@@ -36,20 +36,20 @@ class ErrorPropagation {
     return resultado.abs() * relCombinada;
   }
 
-  /// Clasifica un error como "sistematico" (afecta siempre en la misma
-  /// direccion; se corrige con calibracion) o "aleatorio" (varia lectura
+  /// Clasifica un error como "sistemático" (afecta siempre en la misma
+  /// dirección; se corrige con calibración) o "aleatorio" (varía lectura
   /// a lectura; se reduce promediando, nunca se elimina del todo).
   ///
-  /// Regla usada en los ejercicios del Modulo 3: si repetir la medicion
-  /// N veces y promediar reduce la discrepancia frente al patron, el
+  /// Regla usada en los ejercicios del Módulo 3: si repetir la medición
+  /// N veces y promediar reduce la discrepancia frente al patrón, el
   /// error dominante es aleatorio; si el promedio converge a un valor
-  /// consistentemente desviado del patron, el error es sistematico.
+  /// consistentemente desviado del patrón, el error es sistemático.
   static String clasificarError({
     required double desviacionUnaLectura,
     required double desviacionPromedioNLecturas,
   }) {
     final double reduccion =
         1 - (desviacionPromedioNLecturas / desviacionUnaLectura).abs();
-    return reduccion > 0.5 ? 'aleatorio' : 'sistematico';
+    return reduccion > 0.5 ? 'aleatorio' : 'sistemático';
   }
 }

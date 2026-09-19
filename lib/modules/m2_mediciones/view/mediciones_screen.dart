@@ -9,19 +9,19 @@ class MedicionesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Modulo 2 · Mediciones')),
+      appBar: AppBar(title: const Text('Módulo 2 · Mediciones')),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           const Text(
             'Laboratorio interactivo: elige instrumento, escala/rango y '
-            'toma una medicion simulada con error e incertidumbre realistas.',
+            'toma una medición simulada con error e incertidumbre realistas.',
           ),
           const SizedBox(height: 16),
           Card(
             child: ListTile(
               leading: const Icon(Icons.speed),
-              title: const Text('Laboratorio de multimetro'),
+              title: const Text('Laboratorio de multímetro'),
               subtitle: const Text('Voltaje DC, corriente y resistencia'),
               trailing: const Icon(Icons.chevron_right),
               onTap: () => Navigator.of(context).push(
@@ -35,7 +35,7 @@ class MedicionesScreen extends StatelessWidget {
               leading: const Icon(Icons.monitor_heart_outlined),
               title: const Text('Laboratorio de osciloscopio'),
               subtitle:
-                  const Text('Amplitud y frecuencia de senales periodicas'),
+                  const Text('Amplitud y frecuencia de señales periódicas'),
               trailing: const Icon(Icons.chevron_right),
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(

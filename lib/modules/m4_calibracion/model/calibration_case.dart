@@ -2,10 +2,10 @@ import '../../../core/measurement/instrument_model.dart';
 import '../../../core/measurement/instrument_range.dart';
 import '../../../core/measurement/units.dart';
 
-/// Caso de calibracion: dos patrones de referencia CONOCIDOS (visibles
-/// para el estudiante, como en un laboratorio real donde el patron es
-/// trazable) y un instrumento cuya ganancia/offset reales estan ocultos:
-/// el estudiante debe estimarlos midiendo los patrones, no leyendolos.
+/// Caso de calibración: dos patrones de referencia CONOCIDOS (visibles
+/// para el estudiante, como en un laboratorio real donde el patrón es
+/// trazable) y un instrumento cuya ganancia/offset reales están ocultos:
+/// el estudiante debe estimarlos midiendo los patrones, no leyéndolos.
 class CasoCalibracion {
   const CasoCalibracion({
     required this.id,
@@ -27,7 +27,7 @@ class CasoCalibracion {
 
   InstrumentModel construirInstrumento() {
     return InstrumentModel(
-      nombre: 'Instrumento en calibracion',
+      nombre: 'Instrumento en calibración',
       rango: rango,
       ganancia: gananciaOculta,
       offset: offsetOculto,
@@ -39,7 +39,7 @@ const List<CasoCalibracion> casosCalibracion = [
   CasoCalibracion(
     id: 'multimetro_revision_anual',
     descripcion:
-        'Multimetro de planta en su revision periodica anual, contra patron de voltaje trazable.',
+        'Multímetro de planta en su revisión periódica anual, contra patrón de voltaje trazable.',
     patronBajo: 2.0,
     patronAlto: 18.0,
     rango: InstrumentRange(
@@ -54,7 +54,7 @@ const List<CasoCalibracion> casosCalibracion = [
   CasoCalibracion(
     id: 'sensor_temperatura_nuevo',
     descripcion:
-        'Sensor de temperatura recien instalado, verificacion inicial contra bano termostatico patron.',
+        'Sensor de temperatura recién instalado, verificación inicial contra baño termostático patrón.',
     patronBajo: 20.0,
     patronAlto: 90.0,
     rango: InstrumentRange(
@@ -69,7 +69,7 @@ const List<CasoCalibracion> casosCalibracion = [
   CasoCalibracion(
     id: 'pinza_amperometrica_sospechosa',
     descripcion:
-        'Pinza amperometrica que dio lecturas inconsistentes en campo; se revisa contra fuente de corriente patron.',
+        'Pinza amperométrica que dio lecturas inconsistentes en campo; se revisa contra fuente de corriente patrón.',
     patronBajo: 1.0,
     patronAlto: 15.0,
     rango: InstrumentRange(

@@ -76,7 +76,7 @@ class SeleccionEjercicioScreen extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: 20),
-            const Text('¿Que instrumento usarias?'),
+            const Text('¿Qué instrumento usarías?'),
             const SizedBox(height: 12),
             ...escenario.opciones.map((idOpcion) {
               final bool respondido = estado.respondido;

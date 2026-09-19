@@ -16,7 +16,7 @@ class CasosScreen extends ConsumerWidget {
         ref.read(casosIndustrialesProvider.notifier);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Modulo 5 · Casos industriales')),
+      appBar: AppBar(title: const Text('Módulo 5 · Casos industriales')),
       body: estado.terminado
           ? _Final(estado: estado, notifier: notifier, ref: ref)
           : _PasoActual(estado: estado, notifier: notifier),
@@ -59,7 +59,7 @@ class _PasoActual extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Paso 1: ¿que instrumento usarias?'),
+        const Text('Paso 1: ¿qué instrumento usarías?'),
         const SizedBox(height: 12),
         ...caso.opcionesInstrumento.map(
           (op) => Padding(
@@ -76,7 +76,7 @@ class _PasoActual extends StatelessWidget {
           Text(
             estado.instrumentoCorrecto!
                 ? 'Correcto. ${caso.justificacionInstrumento}'
-                : 'No es la mejor opcion. ${caso.justificacionInstrumento}',
+                : 'No es la mejor opción. ${caso.justificacionInstrumento}',
           ),
         ],
       ],
@@ -87,7 +87,7 @@ class _PasoActual extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Paso 2: toma la medicion con el instrumento correcto.'),
+        const Text('Paso 2: toma la medición con el instrumento correcto.'),
         const SizedBox(height: 12),
         ElevatedButton(onPressed: notifier.medir, child: const Text('Medir')),
       ],
@@ -102,7 +102,7 @@ class _PasoActual extends StatelessWidget {
         Text('Lectura del instrumento: ${resultado.textoConIncertidumbre(2)} '
             '${caso.rango.magnitud.simbolo}'),
         const SizedBox(height: 16),
-        const Text('Paso 3: segun esa lectura, ¿que accion tomarias?'),
+        const Text('Paso 3: según esa lectura, ¿qué acción tomarías?'),
         const SizedBox(height: 12),
         ...caso.opcionesAccion.map(
           (op) => Padding(
@@ -124,8 +124,8 @@ class _PasoActual extends StatelessWidget {
       children: [
         Text(
           estado.accionCorrecta!
-              ? 'Decision correcta.'
-              : 'Esa no era la mejor decision.',
+              ? 'Decisión correcta.'
+              : 'Esa no era la mejor decisión.',
           style: Theme.of(context).textTheme.titleMedium,
         ),
         const SizedBox(height: 8),

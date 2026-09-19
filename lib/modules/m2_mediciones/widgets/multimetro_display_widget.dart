@@ -17,8 +17,8 @@ class MultimetroDisplayWidget extends StatelessWidget {
 
   /// toStringAsFixed exige un entero >= 0; algunos rangos (p. ej. escalas
   /// de resistencia en decenas/centenas) usan resolucionDecimales negativo
-  /// internamente para el redondeo, asi que aqui se recorta a 0 solo para
-  /// la presentacion visual.
+  /// internamente para el redondeo, así que aquí se recorta a 0 solo para
+  /// la presentación visual.
   int get _decimalesVisibles => decimales < 0 ? 0 : decimales;
 
   @override

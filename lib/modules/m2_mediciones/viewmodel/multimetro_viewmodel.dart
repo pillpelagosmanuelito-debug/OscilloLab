@@ -56,7 +56,7 @@ class MultimetroNotifier extends Notifier<MultimetroState> {
 
   void medir() {
     final InstrumentModel instrumento = InstrumentModel(
-      nombre: 'Multimetro digital',
+      nombre: 'Multímetro digital',
       rango: state.rangoSeleccionado,
     );
     final ResultadoMedicion resultado =

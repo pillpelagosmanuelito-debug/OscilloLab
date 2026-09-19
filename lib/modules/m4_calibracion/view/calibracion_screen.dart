@@ -16,7 +16,7 @@ class CalibracionScreen extends ConsumerWidget {
     final CalibracionNotifier notifier = ref.read(calibracionProvider.notifier);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Modulo 4 · Calibracion')),
+      appBar: AppBar(title: const Text('Módulo 4 · Calibración')),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
@@ -42,14 +42,14 @@ class CalibracionScreen extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                      'Patron bajo: ${estado.caso.patronBajo} ${estado.caso.rango.magnitud.simbolo}'),
+                      'Patrón bajo: ${estado.caso.patronBajo} ${estado.caso.rango.magnitud.simbolo}'),
                   Text(
-                      'Patron alto: ${estado.caso.patronAlto} ${estado.caso.rango.magnitud.simbolo}'),
+                      'Patrón alto: ${estado.caso.patronAlto} ${estado.caso.rango.magnitud.simbolo}'),
                   const SizedBox(height: 8),
                   const Text(
-                    'Toma varias lecturas en cada patron y promedia, para '
+                    'Toma varias lecturas en cada patrón y promedia, para '
                     'reducir el ruido antes de estimar ganancia y offset '
-                    '(calibracion de dos puntos).',
+                    '(calibración de dos puntos).',
                     style: TextStyle(fontStyle: FontStyle.italic),
                   ),
                 ],
@@ -72,9 +72,9 @@ class CalibracionScreen extends ConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                        'Promedio en patron bajo: ${estado.promedioBajo!.toStringAsFixed(4)}'),
+                        'Promedio en patrón bajo: ${estado.promedioBajo!.toStringAsFixed(4)}'),
                     Text(
-                        'Promedio en patron alto: ${estado.promedioAlto!.toStringAsFixed(4)}'),
+                        'Promedio en patrón alto: ${estado.promedioAlto!.toStringAsFixed(4)}'),
                     const Divider(),
                     Text(
                         'Ganancia estimada: ${estado.estimada!.ganancia.toStringAsFixed(4)} (ideal 1.0000)'),
@@ -91,7 +91,7 @@ class CalibracionScreen extends ConsumerWidget {
               onPressed: () => ref
                   .read(progresoProvider.notifier)
                   .registrarEjercicioCompletado('m4'),
-              child: const Text('Marcar calibracion como completada'),
+              child: const Text('Marcar calibración como completada'),
             ),
           ],
         ],

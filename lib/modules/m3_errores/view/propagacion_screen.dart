@@ -28,7 +28,7 @@ class _PropagacionScreenState extends ConsumerState<PropagacionScreen> {
     final PropagacionNotifier notifier = ref.read(propagacionProvider.notifier);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Propagacion de incertidumbre')),
+      appBar: AppBar(title: const Text('Propagación de incertidumbre')),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
@@ -110,11 +110,11 @@ class _PropagacionScreenState extends ConsumerState<PropagacionScreen> {
                   children: [
                     Text(
                         'P correcto: ${estado.potenciaCorrecta!.toStringAsFixed(3)} W '
-                        '(${estado.aciertoValor! ? "tu respuesta esta bien" : "revisa tu calculo"})'),
+                        '(${estado.aciertoValor! ? "tu respuesta está bien" : "revisa tu cálculo"})'),
                     const SizedBox(height: 4),
                     Text(
                         'U(P) correcto: ${estado.incertidumbreCorrecta!.toStringAsFixed(4)} W '
-                        '(${estado.aciertoIncertidumbre! ? "tu respuesta esta bien" : "revisa la combinacion en cuadratura"})'),
+                        '(${estado.aciertoIncertidumbre! ? "tu respuesta está bien" : "revisa la combinación en cuadratura"})'),
                   ],
                 ),
               ),

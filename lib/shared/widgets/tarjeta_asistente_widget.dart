@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../core/assistant/assistant_message.dart';
 
-/// Tarjeta reutilizable para mostrar la respuesta del asistente tecnico
-/// en cualquier modulo (Mediciones, Errores, Calibracion, Casos).
+/// Tarjeta reutilizable para mostrar la respuesta del asistente técnico
+/// en cualquier módulo (Mediciones, Errores, Calibración, Casos).
 class TarjetaAsistenteWidget extends StatelessWidget {
   const TarjetaAsistenteWidget({super.key, required this.mensaje});
 

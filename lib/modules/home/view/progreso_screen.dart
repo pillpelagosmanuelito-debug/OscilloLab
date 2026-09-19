@@ -7,11 +7,11 @@ class ProgresoScreen extends ConsumerWidget {
   const ProgresoScreen({super.key});
 
   static const Map<String, String> _nombres = {
-    'm1': 'Modulo 1 · Instrumentos',
-    'm2': 'Modulo 2 · Mediciones',
-    'm3': 'Modulo 3 · Errores',
-    'm4': 'Modulo 4 · Calibracion',
-    'm5': 'Modulo 5 · Casos industriales',
+    'm1': 'Módulo 1 · Instrumentos',
+    'm2': 'Módulo 2 · Mediciones',
+    'm3': 'Módulo 3 · Errores',
+    'm4': 'Módulo 4 · Calibración',
+    'm5': 'Módulo 5 · Casos industriales',
   };
 
   @override

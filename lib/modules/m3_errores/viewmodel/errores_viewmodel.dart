@@ -60,11 +60,11 @@ class ErroresNotifier extends Notifier<ErroresState> {
     return const ErroresState(indice: 0, correctas: 0);
   }
 
-  /// Toma una lectura unica y un promedio de 30 lecturas del instrumento
-  /// del caso actual, y deriva la clasificacion CORRECTA aplicando la
-  /// misma regla que el motor de propagacion de errores (no un valor
+  /// Toma una lectura única y un promedio de 30 lecturas del instrumento
+  /// del caso actual, y deriva la clasificación CORRECTA aplicando la
+  /// misma regla que el motor de propagación de errores (no un valor
   /// codificado a mano): si promediar reduce la discrepancia frente al
-  /// patron en mas del 50%, el error dominante es aleatorio.
+  /// patrón en más del 50%, el error dominante es aleatorio.
   void medir() {
     final CasoError? caso = state.casoActual;
     if (caso == null) return;

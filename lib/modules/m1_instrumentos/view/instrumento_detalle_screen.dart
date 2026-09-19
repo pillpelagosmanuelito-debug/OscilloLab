@@ -22,7 +22,7 @@ class InstrumentoDetalleScreen extends StatelessWidget {
           const SizedBox(height: 12),
           _Seccion(titulo: 'Funcionamiento', cuerpo: ficha.funcionamiento),
           _SeccionLista(
-              titulo: 'Caracteristicas', items: ficha.caracteristicas),
+              titulo: 'Características', items: ficha.caracteristicas),
           _SeccionLista(titulo: 'Aplicaciones', items: ficha.aplicaciones),
           _SeccionLista(
             titulo: 'Errores comunes',

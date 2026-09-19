@@ -34,9 +34,9 @@ class PropagacionNotifier extends Notifier<PropagacionState> {
 
   PropagacionState _generarParaCaso(CasoPropagacion caso) {
     final InstrumentModel voltimetro =
-        InstrumentModel(nombre: 'Voltimetro', rango: caso.rangoVoltaje);
+        InstrumentModel(nombre: 'Voltímetro', rango: caso.rangoVoltaje);
     final InstrumentModel amperimetro =
-        InstrumentModel(nombre: 'Amperimetro', rango: caso.rangoCorriente);
+        InstrumentModel(nombre: 'Amperímetro', rango: caso.rangoCorriente);
     return PropagacionState(
       caso: caso,
       medicionV: voltimetro.medir(caso.voltajeReal),

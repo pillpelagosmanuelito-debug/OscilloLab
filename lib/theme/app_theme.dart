@@ -3,12 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 /// Tema visual de OscilloLab.
 ///
-/// Paleta deliberadamente distinta a las apps anteriores de la fabrica
+/// Paleta deliberadamente distinta a las apps anteriores de la fábrica
 /// (CircuitLab Academy usa azul/naranja de PCB; CircuitAR usa verde
-/// esquematico): aqui se usa una paleta "panel de instrumento" —
-/// verde fosforo de osciloscopio sobre grafito oscuro, con acento
-/// ambar de multimetro de banco. Ademas la navegacion principal es una
-/// barra inferior de 5 modulos en vez del Drawer lateral usado antes.
+/// esquemático): aquí se usa una paleta "panel de instrumento" —
+/// verde fósforo de osciloscopio sobre grafito oscuro, con acento
+/// ámbar de multímetro de banco. Además la navegación principal es una
+/// barra inferior de 5 módulos en vez del Drawer lateral usado antes.
 class AppTheme {
   static const Color grafito = Color(0xFF12181B);
   static const Color panel = Color(0xFF1B2427);
@@ -58,7 +58,7 @@ class AppTheme {
   }
 
   /// Fuente monoespaciada usada solo en pantallas de instrumento
-  /// (multimetro/osciloscopio), para imitar un display de 7 segmentos.
+  /// (multímetro/osciloscopio), para imitar un display de 7 segmentos.
   static TextStyle get textoDisplay => GoogleFonts.jetBrainsMono(
         color: verdeFosforo,
         fontSize: 34,

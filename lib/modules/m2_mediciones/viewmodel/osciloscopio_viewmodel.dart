@@ -50,9 +50,9 @@ class OsciloscopioNotifier extends Notifier<OsciloscopioState> {
         escenario: primero, muestras: _generarMuestras(primero));
   }
 
-  /// Genera 200 muestras de la senal para dibujarla en pantalla, con el
-  /// mismo ruido gaussiano que el motor de medicion aplicaria a una
-  /// lectura real (asi la pantalla se ve tan "sucia" como la medicion).
+  /// Genera 200 muestras de la señal para dibujarla en pantalla, con el
+  /// mismo ruido gaussiano que el motor de medición aplicaría a una
+  /// lectura real (así la pantalla se ve tan "sucia" como la medición).
   List<double> _generarMuestras(EscenarioOsciloscopio escenario) {
     const int n = 200;
     const double ciclosVisibles = 3.0;

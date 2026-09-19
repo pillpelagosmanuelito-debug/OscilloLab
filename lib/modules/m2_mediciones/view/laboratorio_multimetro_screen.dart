@@ -18,14 +18,14 @@ class LaboratorioMultimetroScreen extends ConsumerWidget {
     final MultimetroNotifier notifier = ref.read(multimetroProvider.notifier);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Laboratorio · Multimetro')),
+      appBar: AppBar(title: const Text('Laboratorio · Multímetro')),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           DropdownButtonFormField<EscenarioMultimetro>(
             value: estado.escenario,
             decoration:
-                const InputDecoration(labelText: 'Escenario de medicion'),
+                const InputDecoration(labelText: 'Escenario de medición'),
             items: escenariosMultimetro
                 .map((e) => DropdownMenuItem(
                     value: e,
@@ -66,7 +66,7 @@ class LaboratorioMultimetroScreen extends ConsumerWidget {
               onPressed: () => ref
                   .read(progresoProvider.notifier)
                   .registrarEjercicioCompletado('m2'),
-              child: const Text('Marcar medicion como completada'),
+              child: const Text('Marcar medición como completada'),
             ),
           ],
         ],

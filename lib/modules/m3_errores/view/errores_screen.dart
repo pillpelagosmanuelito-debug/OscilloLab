@@ -16,11 +16,11 @@ class ErroresScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Modulo 3 · Errores'),
+        title: const Text('Módulo 3 · Errores'),
         actions: [
           IconButton(
             icon: const Icon(Icons.functions),
-            tooltip: 'Ejercicio de propagacion',
+            tooltip: 'Ejercicio de propagación',
             onPressed: () => Navigator.of(context).push(
               MaterialPageRoute(builder: (_) => const PropagacionScreen()),
             ),
@@ -62,12 +62,12 @@ class _Ejercicio extends StatelessWidget {
               onPressed: notifier.medir,
             )
           else ...[
-            Text('Lectura unica: ${estado.lecturaUnica!.toStringAsFixed(3)}'),
+            Text('Lectura única: ${estado.lecturaUnica!.toStringAsFixed(3)}'),
             Text(
                 'Promedio de 30 lecturas: ${estado.promedioLecturas!.toStringAsFixed(3)}'),
             const SizedBox(height: 16),
             const Text(
-                '¿El error dominante de este instrumento es sistematico o aleatorio?'),
+                '¿El error dominante de este instrumento es sistemático o aleatorio?'),
             const SizedBox(height: 12),
             Row(
               children: [
@@ -75,8 +75,8 @@ class _Ejercicio extends StatelessWidget {
                   child: OutlinedButton(
                     onPressed: estado.respondido
                         ? null
-                        : () => notifier.responder('sistematico'),
-                    child: const Text('Sistematico'),
+                        : () => notifier.responder('sistemático'),
+                    child: const Text('Sistemático'),
                   ),
                 ),
                 const SizedBox(width: 12),

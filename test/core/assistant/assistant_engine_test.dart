@@ -39,7 +39,7 @@ void main() {
 
     test('evaluarClasificacionError corrige cuando no coincide', () {
       final MensajeAsistente m = AssistantEngine.evaluarClasificacionError(
-        respuestaEstudiante: 'sistematico',
+        respuestaEstudiante: 'sistemático',
         clasificacionCorrecta: 'aleatorio',
       );
       expect(m.tipo, TipoMensajeAsistente.error);

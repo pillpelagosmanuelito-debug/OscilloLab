@@ -3,8 +3,8 @@ import 'dart:math';
 import 'instrument_range.dart';
 import 'noise_generator.dart';
 
-/// Resultado de una medicion simulada. Cuando [enRango] es falso, el
-/// instrumento habria mostrado "OL" (overload) y [valor] no debe usarse.
+/// Resultado de una medición simulada. Cuando [enRango] es falso, el
+/// instrumento habría mostrado "OL" (overload) y [valor] no debe usarse.
 class ResultadoMedicion {
   const ResultadoMedicion({
     required this.valor,
@@ -16,20 +16,20 @@ class ResultadoMedicion {
   final bool enRango;
   final double incertidumbre;
 
-  /// Representacion tipo pantalla de instrumento, p. ej. "12.34 ± 0.02".
+  /// Representación tipo pantalla de instrumento, p. ej. "12.34 ± 0.02".
   String textoConIncertidumbre(int decimales) {
     if (!enRango) return 'OL';
     return '${valor.toStringAsFixed(decimales)} ± ${incertidumbre.toStringAsFixed(decimales)}';
   }
 }
 
-/// Modelo de instrumento con error sistematico (ganancia + offset), ruido
-/// aleatorio gaussiano y resolucion de pantalla finita.
+/// Modelo de instrumento con error sistemático (ganancia + offset), ruido
+/// aleatorio gaussiano y resolución de pantalla finita.
 ///
 /// `lectura = round( valorReal * ganancia + offset + ruido , resolucion )`
 ///
-/// Un instrumento "calibrado de fabrica" tiene ganancia=1.0, offset=0.0.
-/// El modulo de Calibracion crea instrumentos con ganancia/offset
+/// Un instrumento "calibrado de fábrica" tiene ganancia=1.0, offset=0.0.
+/// El módulo de Calibración crea instrumentos con ganancia/offset
 /// desviados para que el estudiante los detecte y corrija.
 class InstrumentModel {
   InstrumentModel({
@@ -46,8 +46,8 @@ class InstrumentModel {
   final double offset;
   final NoiseGenerator _generador;
 
-  /// Simula una medicion del [valorReal] (oculto para el estudiante).
-  /// El asistente y la UI solo deben ver el resultado de este metodo,
+  /// Simula una medición del [valorReal] (oculto para el estudiante).
+  /// El asistente y la UI solo deben ver el resultado de este método,
   /// nunca [valorReal] directamente.
   ResultadoMedicion medir(double valorReal) {
     if (valorReal.abs() > rango.valorMaximo) {

@@ -10,12 +10,12 @@ class InstrumentosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Modulo 1 · Instrumentos')),
+      appBar: AppBar(title: const Text('Módulo 1 · Instrumentos')),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           const Text(
-            'Fichas tecnicas: funcionamiento, caracteristicas, aplicaciones '
+            'Fichas técnicas: funcionamiento, características, aplicaciones '
             'y errores comunes de cada instrumento del laboratorio.',
           ),
           const SizedBox(height: 16),
@@ -37,7 +37,7 @@ class InstrumentosScreen extends StatelessWidget {
           const SizedBox(height: 20),
           ElevatedButton.icon(
             icon: const Icon(Icons.quiz_outlined),
-            label: const Text('Ejercicio: ¿que instrumento usarias?'),
+            label: const Text('Ejercicio: ¿qué instrumento usarías?'),
             onPressed: () => Navigator.of(context).push(
               MaterialPageRoute(
                   builder: (_) => const SeleccionEjercicioScreen()),

@@ -28,27 +28,27 @@ class InicioScreen extends ConsumerWidget {
       const _ModuloInfo(
           'm1',
           '1 · Instrumentos',
-          'Multimetro, osciloscopio y sensores',
+          'Multímetro, osciloscopio y sensores',
           Icons.science_outlined,
           InstrumentosScreen()),
       const _ModuloInfo(
           'm2',
           '2 · Mediciones',
-          'Laboratorio interactivo de medicion',
+          'Laboratorio interactivo de medición',
           Icons.speed,
           MedicionesScreen()),
       const _ModuloInfo('m3', '3 · Errores',
-          'Sistematico, aleatorio y propagacion', Icons.rule, ErroresScreen()),
+          'Sistemático, aleatorio y propagación', Icons.rule, ErroresScreen()),
       const _ModuloInfo(
           'm4',
-          '4 · Calibracion',
-          'Deteccion y correccion de descalibracion',
+          '4 · Calibración',
+          'Detección y corrección de descalibración',
           Icons.tune,
           CalibracionScreen()),
       const _ModuloInfo(
           'm5',
           '5 · Casos industriales',
-          'Instrumentacion, control y automatizacion',
+          'Instrumentación, control y automatización',
           Icons.factory_outlined,
           CasosScreen()),
     ];
@@ -62,12 +62,12 @@ class InicioScreen extends ConsumerWidget {
         padding: const EdgeInsets.all(16),
         children: [
           Text(
-            'Laboratorio virtual de instrumentacion y medicion electronica',
+            'Laboratorio virtual de instrumentación y medición electrónica',
             style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(height: 4),
           Text(
-            'Practica interpretando mediciones reales: error, incertidumbre y calibracion.',
+            'Practica interpretando mediciones reales: error, incertidumbre y calibración.',
             style: Theme.of(context).textTheme.bodySmall,
           ),
           const SizedBox(height: 20),

@@ -12,7 +12,7 @@ void main() {
     expect(find.text('1 · Instrumentos'), findsOneWidget);
     expect(find.text('2 · Mediciones'), findsOneWidget);
     expect(find.text('3 · Errores'), findsOneWidget);
-    expect(find.text('4 · Calibracion'), findsOneWidget);
+    expect(find.text('4 · Calibración'), findsOneWidget);
     expect(find.text('5 · Casos industriales'), findsOneWidget);
   });
 
@@ -28,6 +28,6 @@ void main() {
 
     await tester.tap(find.text('Asistente'));
     await tester.pumpAndSettle();
-    expect(find.text('Asistente tecnico'), findsOneWidget);
+    expect(find.text('Asistente técnico'), findsOneWidget);
   });
 }

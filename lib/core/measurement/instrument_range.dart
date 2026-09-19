@@ -1,12 +1,12 @@
 import 'units.dart';
 
-/// Un rango/escala seleccionable de un instrumento (p. ej. multimetro en
+/// Un rango/escala seleccionable de un instrumento (p. ej. multímetro en
 /// escala de 20V, o resistencia en escala de 2kΩ).
 ///
-/// [ruidoSigma] y [resolucionDecimales] son los parametros que el motor de
-/// medicion usa para simular una lectura realista; fueron calibrados y
-/// validados estadisticamente en `calib/measurement_model.py` antes de
-/// portarse aqui (ver docs/04_Guia_Calibracion_Motor.md).
+/// [ruidoSigma] y [resolucionDecimales] son los parámetros que el motor de
+/// medición usa para simular una lectura realista; fueron calibrados y
+/// validados estadísticamente en `calib/measurement_model.py` antes de
+/// portarse aquí (ver docs/04_Guia_Calibracion_Motor.md).
 class InstrumentRange {
   const InstrumentRange({
     required this.etiqueta,
@@ -22,9 +22,9 @@ class InstrumentRange {
   final double ruidoSigma;
   final int resolucionDecimales;
 
-  /// Incertidumbre declarada U = 2*sigma (cobertura ~95%) + medio digito de
-  /// resolucion. Es deliberadamente conservadora: garantiza cobertura >=95%,
-  /// no exactamente 95% (practica estandar de instrumentacion).
+  /// Incertidumbre declarada U = 2*sigma (cobertura ~95%) + medio dígito de
+  /// resolución. Es deliberadamente conservadora: garantiza cobertura >=95%,
+  /// no exactamente 95% (práctica estándar de instrumentación).
   double get incertidumbreDeclarada {
     final double medioDigito = 0.5 * _pow10(-resolucionDecimales);
     return 2 * ruidoSigma + medioDigito;

@@ -1,4 +1,4 @@
-/// Magnitudes fisicas que el laboratorio puede medir.
+/// Magnitudes físicas que el laboratorio puede medir.
 enum Magnitud {
   voltajeDc,
   voltajeAc,

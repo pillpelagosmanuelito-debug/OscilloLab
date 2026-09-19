@@ -1,7 +1,7 @@
 import '../../../core/measurement/instrument_range.dart';
 import '../../../core/measurement/units.dart';
 
-/// Caso del ejercicio de propagacion de incertidumbre: se mide voltaje y
+/// Caso del ejercicio de propagación de incertidumbre: se mide voltaje y
 /// corriente de forma independiente y se pide calcular la potencia
 /// P = V*I junto con su incertidumbre combinada.
 class CasoPropagacion {
@@ -45,7 +45,7 @@ const List<CasoPropagacion> casosPropagacion = [
   CasoPropagacion(
     id: 'potencia_motor_dc',
     descripcion:
-        'Calcula la potencia electrica consumida por un motor DC en su punto de operacion nominal.',
+        'Calcula la potencia eléctrica consumida por un motor DC en su punto de operación nominal.',
     voltajeReal: 12.0,
     corrienteReal: 1.8,
     rangoVoltaje: InstrumentRange(

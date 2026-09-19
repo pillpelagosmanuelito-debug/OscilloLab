@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import '../../../core/assistant/assistant_engine.dart';
 import '../../../shared/widgets/tarjeta_asistente_widget.dart';
 
-/// Panel del asistente tecnico. Es un sistema de reglas (no un LLM):
+/// Panel del asistente técnico. Es un sistema de reglas (no un LLM):
 /// el estudiante elige una magnitud/necesidad y el asistente recomienda
-/// el instrumento adecuado con la regla tecnica que justifica la
-/// respuesta. Esta misma logica (AssistantEngine) es la que da feedback
-/// dentro de los modulos 2, 3 y 4.
+/// el instrumento adecuado con la regla técnica que justifica la
+/// respuesta. Esta misma lógica (AssistantEngine) es la que da feedback
+/// dentro de los módulos 2, 3 y 4.
 class AsistentePanel extends StatefulWidget {
   const AsistentePanel({super.key});
 
@@ -21,7 +21,7 @@ class _AsistentePanelState extends State<AsistentePanel> {
   static const Map<String, String> _opciones = {
     'voltaje_dc_estable': 'Necesito medir un voltaje DC estable',
     'senal_variable_en_tiempo':
-        'Necesito ver como cambia una senal en el tiempo',
+        'Necesito ver cómo cambia una señal en el tiempo',
     'temperatura_proceso': 'Necesito controlar la temperatura de un proceso',
     'distancia_objeto': 'Necesito detectar la distancia a un objeto',
   };
@@ -29,7 +29,7 @@ class _AsistentePanelState extends State<AsistentePanel> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Asistente tecnico')),
+      appBar: AppBar(title: const Text('Asistente técnico')),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
@@ -38,15 +38,15 @@ class _AsistentePanelState extends State<AsistentePanel> {
             child: const Padding(
               padding: EdgeInsets.all(16),
               child: Text(
-                'Este asistente usa reglas tecnicas explicitas, no un '
-                'modelo de lenguaje: cada recomendacion viene de una '
-                'tabla de decision de instrumentacion, por eso es '
+                'Este asistente usa reglas técnicas explícitas, no un '
+                'modelo de lenguaje: cada recomendación viene de una '
+                'tabla de decisión de instrumentación, por eso es '
                 'consistente y verificable.',
               ),
             ),
           ),
           const SizedBox(height: 20),
-          const Text('¿Que necesitas hacer?'),
+          const Text('¿Qué necesitas hacer?'),
           const SizedBox(height: 8),
           ..._opciones.entries.map(
             (op) => RadioListTile<String>(
