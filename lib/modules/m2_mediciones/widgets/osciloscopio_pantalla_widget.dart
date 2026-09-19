@@ -52,12 +52,14 @@ class _OsciloscopioPainter extends CustomPainter {
     final Paint ejeCentral = Paint()
       ..color = AppTheme.verdeFosforo.withOpacity(0.35)
       ..strokeWidth = 1.4;
-    canvas.drawLine(Offset(0, size.height / 2), Offset(size.width, size.height / 2), ejeCentral);
+    canvas.drawLine(Offset(0, size.height / 2),
+        Offset(size.width, size.height / 2), ejeCentral);
   }
 
   void _dibujarSenal(Canvas canvas, Size size) {
     if (muestras.isEmpty) return;
-    final double maxAbs = muestras.map((v) => v.abs()).reduce((a, b) => a > b ? a : b);
+    final double maxAbs =
+        muestras.map((v) => v.abs()).reduce((a, b) => a > b ? a : b);
     final double escala = maxAbs == 0 ? 1 : (size.height * 0.42) / maxAbs;
 
     final Paint trazo = Paint()

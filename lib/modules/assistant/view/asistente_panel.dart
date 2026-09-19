@@ -20,7 +20,8 @@ class _AsistentePanelState extends State<AsistentePanel> {
 
   static const Map<String, String> _opciones = {
     'voltaje_dc_estable': 'Necesito medir un voltaje DC estable',
-    'senal_variable_en_tiempo': 'Necesito ver como cambia una senal en el tiempo',
+    'senal_variable_en_tiempo':
+        'Necesito ver como cambia una senal en el tiempo',
     'temperatura_proceso': 'Necesito controlar la temperatura de un proceso',
     'distancia_objeto': 'Necesito detectar la distancia a un objeto',
   };

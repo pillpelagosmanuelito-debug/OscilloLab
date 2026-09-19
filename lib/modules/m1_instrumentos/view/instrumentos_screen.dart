@@ -39,7 +39,8 @@ class InstrumentosScreen extends StatelessWidget {
             icon: const Icon(Icons.quiz_outlined),
             label: const Text('Ejercicio: ¿que instrumento usarias?'),
             onPressed: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const SeleccionEjercicioScreen()),
+              MaterialPageRoute(
+                  builder: (_) => const SeleccionEjercicioScreen()),
             ),
           ),
         ],

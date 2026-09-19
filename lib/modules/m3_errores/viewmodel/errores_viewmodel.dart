@@ -44,7 +44,8 @@ class ErroresState {
       correctas: correctas ?? this.correctas,
       lecturaUnica: lecturaUnica ?? this.lecturaUnica,
       promedioLecturas: promedioLecturas ?? this.promedioLecturas,
-      clasificacionCorrecta: clasificacionCorrecta ?? this.clasificacionCorrecta,
+      clasificacionCorrecta:
+          clasificacionCorrecta ?? this.clasificacionCorrecta,
       respuestaElegida: respuestaElegida,
       mensajeAsistente: mensajeAsistente,
     );

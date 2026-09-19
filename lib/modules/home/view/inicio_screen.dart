@@ -9,7 +9,8 @@ import '../../m4_calibracion/view/calibracion_screen.dart';
 import '../../m5_casos_industriales/view/casos_screen.dart';
 
 class _ModuloInfo {
-  const _ModuloInfo(this.clave, this.titulo, this.subtitulo, this.icono, this.pantalla);
+  const _ModuloInfo(
+      this.clave, this.titulo, this.subtitulo, this.icono, this.pantalla);
   final String clave;
   final String titulo;
   final String subtitulo;
@@ -24,16 +25,32 @@ class InicioScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final ProgresoState progreso = ref.watch(progresoProvider);
     final List<_ModuloInfo> modulos = [
-      const _ModuloInfo('m1', '1 · Instrumentos', 'Multimetro, osciloscopio y sensores',
-          Icons.science_outlined, InstrumentosScreen()),
-      const _ModuloInfo('m2', '2 · Mediciones', 'Laboratorio interactivo de medicion',
-          Icons.speed, MedicionesScreen()),
-      const _ModuloInfo('m3', '3 · Errores', 'Sistematico, aleatorio y propagacion',
-          Icons.rule, ErroresScreen()),
-      const _ModuloInfo('m4', '4 · Calibracion', 'Deteccion y correccion de descalibracion',
-          Icons.tune, CalibracionScreen()),
-      const _ModuloInfo('m5', '5 · Casos industriales', 'Instrumentacion, control y automatizacion',
-          Icons.factory_outlined, CasosScreen()),
+      const _ModuloInfo(
+          'm1',
+          '1 · Instrumentos',
+          'Multimetro, osciloscopio y sensores',
+          Icons.science_outlined,
+          InstrumentosScreen()),
+      const _ModuloInfo(
+          'm2',
+          '2 · Mediciones',
+          'Laboratorio interactivo de medicion',
+          Icons.speed,
+          MedicionesScreen()),
+      const _ModuloInfo('m3', '3 · Errores',
+          'Sistematico, aleatorio y propagacion', Icons.rule, ErroresScreen()),
+      const _ModuloInfo(
+          'm4',
+          '4 · Calibracion',
+          'Deteccion y correccion de descalibracion',
+          Icons.tune,
+          CalibracionScreen()),
+      const _ModuloInfo(
+          'm5',
+          '5 · Casos industriales',
+          'Instrumentacion, control y automatizacion',
+          Icons.factory_outlined,
+          CasosScreen()),
     ];
 
     return Scaffold(

@@ -25,18 +25,40 @@ class CasoPropagacion {
 const List<CasoPropagacion> casosPropagacion = [
   CasoPropagacion(
     id: 'potencia_resistencia_calefactora',
-    descripcion: 'Calcula la potencia disipada por una resistencia calefactora en un horno de laboratorio.',
+    descripcion:
+        'Calcula la potencia disipada por una resistencia calefactora en un horno de laboratorio.',
     voltajeReal: 24.0,
     corrienteReal: 2.5,
-    rangoVoltaje: InstrumentRange(etiqueta: '200 V', magnitud: Magnitud.voltajeDc, valorMaximo: 200, ruidoSigma: 0.06, resolucionDecimales: 2),
-    rangoCorriente: InstrumentRange(etiqueta: '20 A', magnitud: Magnitud.corrienteDc, valorMaximo: 20, ruidoSigma: 0.02, resolucionDecimales: 2),
+    rangoVoltaje: InstrumentRange(
+        etiqueta: '200 V',
+        magnitud: Magnitud.voltajeDc,
+        valorMaximo: 200,
+        ruidoSigma: 0.06,
+        resolucionDecimales: 2),
+    rangoCorriente: InstrumentRange(
+        etiqueta: '20 A',
+        magnitud: Magnitud.corrienteDc,
+        valorMaximo: 20,
+        ruidoSigma: 0.02,
+        resolucionDecimales: 2),
   ),
   CasoPropagacion(
     id: 'potencia_motor_dc',
-    descripcion: 'Calcula la potencia electrica consumida por un motor DC en su punto de operacion nominal.',
+    descripcion:
+        'Calcula la potencia electrica consumida por un motor DC en su punto de operacion nominal.',
     voltajeReal: 12.0,
     corrienteReal: 1.8,
-    rangoVoltaje: InstrumentRange(etiqueta: '20 V', magnitud: Magnitud.voltajeDc, valorMaximo: 20, ruidoSigma: 0.008, resolucionDecimales: 2),
-    rangoCorriente: InstrumentRange(etiqueta: '2 A', magnitud: Magnitud.corrienteDc, valorMaximo: 2, ruidoSigma: 0.0015, resolucionDecimales: 3),
+    rangoVoltaje: InstrumentRange(
+        etiqueta: '20 V',
+        magnitud: Magnitud.voltajeDc,
+        valorMaximo: 20,
+        ruidoSigma: 0.008,
+        resolucionDecimales: 2),
+    rangoCorriente: InstrumentRange(
+        etiqueta: '2 A',
+        magnitud: Magnitud.corrienteDc,
+        valorMaximo: 2,
+        ruidoSigma: 0.0015,
+        resolucionDecimales: 3),
   ),
 ];

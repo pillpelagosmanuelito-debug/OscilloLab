@@ -7,7 +7,9 @@ import 'package:oscillolab/core/measurement/units.dart';
 
 void main() {
   group('CalibrationEngine', () {
-    test('recupera ganancia y offset inyectados mediante calibracion de dos puntos', () {
+    test(
+        'recupera ganancia y offset inyectados mediante calibracion de dos puntos',
+        () {
       // Mismos valores inyectados y misma tolerancia que
       // calib/measurement_model.py::test_two_point_calibration
       const double gananciaInyectada = 1.05;
@@ -31,8 +33,10 @@ void main() {
       const double patronAlto = 18.0;
       const int n = 400;
 
-      final List<double> bajas = List.generate(n, (_) => instrumento.medir(patronBajo).valor);
-      final List<double> altas = List.generate(n, (_) => instrumento.medir(patronAlto).valor);
+      final List<double> bajas =
+          List.generate(n, (_) => instrumento.medir(patronBajo).valor);
+      final List<double> altas =
+          List.generate(n, (_) => instrumento.medir(patronAlto).valor);
 
       final CalibracionEstimada estimada = CalibrationEngine.calibrarDosPuntos(
         patronBajo: patronBajo,
@@ -61,8 +65,10 @@ void main() {
       );
       const double patronBajo = 2.0;
       const double patronAlto = 18.0;
-      final List<double> bajas = List.generate(200, (_) => instrumento.medir(patronBajo).valor);
-      final List<double> altas = List.generate(200, (_) => instrumento.medir(patronAlto).valor);
+      final List<double> bajas =
+          List.generate(200, (_) => instrumento.medir(patronBajo).valor);
+      final List<double> altas =
+          List.generate(200, (_) => instrumento.medir(patronAlto).valor);
 
       final CalibracionEstimada estimada = CalibrationEngine.calibrarDosPuntos(
         patronBajo: patronBajo,

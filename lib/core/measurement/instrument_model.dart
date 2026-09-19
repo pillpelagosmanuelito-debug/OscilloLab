@@ -57,9 +57,8 @@ class InstrumentModel {
         incertidumbre: rango.incertidumbreDeclarada,
       );
     }
-    final double crudo = valorReal * ganancia +
-        offset +
-        _generador.gaussian(rango.ruidoSigma);
+    final double crudo =
+        valorReal * ganancia + offset + _generador.gaussian(rango.ruidoSigma);
     final double redondeado = _redondear(crudo, rango.resolucionDecimales);
     return ResultadoMedicion(
       valor: redondeado,

@@ -38,8 +38,11 @@ class SeleccionEjercicioScreen extends ConsumerWidget {
                 const SizedBox(height: 24),
                 ElevatedButton(
                   onPressed: () {
-                    if (estado.correctas >= (escenariosSeleccion.length * 0.6)) {
-                      ref.read(progresoProvider.notifier).registrarEjercicioCompletado('m1');
+                    if (estado.correctas >=
+                        (escenariosSeleccion.length * 0.6)) {
+                      ref
+                          .read(progresoProvider.notifier)
+                          .registrarEjercicioCompletado('m1');
                     }
                     notifier.reiniciar();
                     Navigator.of(context).pop();
@@ -57,7 +60,8 @@ class SeleccionEjercicioScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pregunta ${estado.indice + 1}/${escenariosSeleccion.length}'),
+        title:
+            Text('Pregunta ${estado.indice + 1}/${escenariosSeleccion.length}'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -96,7 +100,8 @@ class SeleccionEjercicioScreen extends ConsumerWidget {
                       side: BorderSide(color: Colors.grey.shade700),
                     ),
                     title: Text(_nombreInstrumento(idOpcion)),
-                    onTap: respondido ? null : () => notifier.responder(idOpcion),
+                    onTap:
+                        respondido ? null : () => notifier.responder(idOpcion),
                   ),
                 ),
               );

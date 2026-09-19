@@ -33,8 +33,10 @@ class PropagacionNotifier extends Notifier<PropagacionState> {
   }
 
   PropagacionState _generarParaCaso(CasoPropagacion caso) {
-    final InstrumentModel voltimetro = InstrumentModel(nombre: 'Voltimetro', rango: caso.rangoVoltaje);
-    final InstrumentModel amperimetro = InstrumentModel(nombre: 'Amperimetro', rango: caso.rangoCorriente);
+    final InstrumentModel voltimetro =
+        InstrumentModel(nombre: 'Voltimetro', rango: caso.rangoVoltaje);
+    final InstrumentModel amperimetro =
+        InstrumentModel(nombre: 'Amperimetro', rango: caso.rangoCorriente);
     return PropagacionState(
       caso: caso,
       medicionV: voltimetro.medir(caso.voltajeReal),
@@ -44,7 +46,9 @@ class PropagacionNotifier extends Notifier<PropagacionState> {
 
   void elegirCaso(CasoPropagacion caso) => state = _generarParaCaso(caso);
 
-  void evaluar({required double potenciaIngresada, required double incertidumbreIngresada}) {
+  void evaluar(
+      {required double potenciaIngresada,
+      required double incertidumbreIngresada}) {
     final double potenciaReal = state.medicionV.valor * state.medicionI.valor;
     final double incertidumbreReal = ErrorPropagation.combinarProductoCociente(
       valorA: state.medicionV.valor,
@@ -54,9 +58,11 @@ class PropagacionNotifier extends Notifier<PropagacionState> {
       resultado: potenciaReal,
     );
 
-    final bool aciertoValor = (potenciaIngresada - potenciaReal).abs() <= 0.05 * potenciaReal.abs();
+    final bool aciertoValor =
+        (potenciaIngresada - potenciaReal).abs() <= 0.05 * potenciaReal.abs();
     final bool aciertoIncertidumbre =
-        (incertidumbreIngresada - incertidumbreReal).abs() <= 0.25 * incertidumbreReal.abs();
+        (incertidumbreIngresada - incertidumbreReal).abs() <=
+            0.25 * incertidumbreReal.abs();
 
     state = PropagacionState(
       caso: state.caso,
@@ -71,5 +77,7 @@ class PropagacionNotifier extends Notifier<PropagacionState> {
   }
 }
 
-final NotifierProvider<PropagacionNotifier, PropagacionState> propagacionProvider =
-    NotifierProvider<PropagacionNotifier, PropagacionState>(PropagacionNotifier.new);
+final NotifierProvider<PropagacionNotifier, PropagacionState>
+    propagacionProvider =
+    NotifierProvider<PropagacionNotifier, PropagacionState>(
+        PropagacionNotifier.new);

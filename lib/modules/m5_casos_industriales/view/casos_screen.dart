@@ -12,7 +12,8 @@ class CasosScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final CasoIndustrialState estado = ref.watch(casosIndustrialesProvider);
-    final CasosIndustrialesNotifier notifier = ref.read(casosIndustrialesProvider.notifier);
+    final CasosIndustrialesNotifier notifier =
+        ref.read(casosIndustrialesProvider.notifier);
 
     return Scaffold(
       appBar: AppBar(title: const Text('Modulo 5 · Casos industriales')),
@@ -38,13 +39,16 @@ class _PasoActual extends StatelessWidget {
           Card(
             child: Padding(
               padding: const EdgeInsets.all(16),
-              child: Text(caso.contexto, style: Theme.of(context).textTheme.titleMedium),
+              child: Text(caso.contexto,
+                  style: Theme.of(context).textTheme.titleMedium),
             ),
           ),
           const SizedBox(height: 20),
-          if (estado.paso == PasoCaso.seleccionInstrumento) _pasoInstrumento(context, caso),
+          if (estado.paso == PasoCaso.seleccionInstrumento)
+            _pasoInstrumento(context, caso),
           if (estado.paso == PasoCaso.medicion) _pasoMedicion(context, caso),
-          if (estado.paso == PasoCaso.decisionAccion) _pasoAccion(context, caso),
+          if (estado.paso == PasoCaso.decisionAccion)
+            _pasoAccion(context, caso),
           if (estado.paso == PasoCaso.resultado) _pasoResultado(context, caso),
         ],
       ),
@@ -62,7 +66,8 @@ class _PasoActual extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 8),
             child: OutlinedButton(
               onPressed: () => notifier.elegirInstrumento(op.key),
-              child: Align(alignment: Alignment.centerLeft, child: Text(op.value)),
+              child:
+                  Align(alignment: Alignment.centerLeft, child: Text(op.value)),
             ),
           ),
         ),
@@ -104,7 +109,8 @@ class _PasoActual extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 8),
             child: OutlinedButton(
               onPressed: () => notifier.elegirAccion(op.key),
-              child: Align(alignment: Alignment.centerLeft, child: Text(op.value)),
+              child:
+                  Align(alignment: Alignment.centerLeft, child: Text(op.value)),
             ),
           ),
         ),
@@ -135,7 +141,8 @@ class _PasoActual extends StatelessWidget {
 }
 
 class _Final extends StatelessWidget {
-  const _Final({required this.estado, required this.notifier, required this.ref});
+  const _Final(
+      {required this.estado, required this.notifier, required this.ref});
   final CasoIndustrialState estado;
   final CasosIndustrialesNotifier notifier;
   final WidgetRef ref;
@@ -150,13 +157,17 @@ class _Final extends StatelessWidget {
           children: [
             const Icon(Icons.factory_outlined, size: 64),
             const SizedBox(height: 16),
-            Text('${estado.puntaje} / ${casosIndustriales.length * 2} decisiones correctas',
-                style: Theme.of(context).textTheme.headlineSmall, textAlign: TextAlign.center),
+            Text(
+                '${estado.puntaje} / ${casosIndustriales.length * 2} decisiones correctas',
+                style: Theme.of(context).textTheme.headlineSmall,
+                textAlign: TextAlign.center),
             const SizedBox(height: 24),
             ElevatedButton(
               onPressed: () {
                 if (estado.puntaje >= casosIndustriales.length) {
-                  ref.read(progresoProvider.notifier).registrarEjercicioCompletado('m5');
+                  ref
+                      .read(progresoProvider.notifier)
+                      .registrarEjercicioCompletado('m5');
                 }
                 notifier.reiniciar();
               },

@@ -25,7 +25,9 @@ class MultimetroDisplayWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final String texto = resultado == null
         ? '— —'
-        : (resultado!.enRango ? resultado!.valor.toStringAsFixed(_decimalesVisibles) : 'OL');
+        : (resultado!.enRango
+            ? resultado!.valor.toStringAsFixed(_decimalesVisibles)
+            : 'OL');
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.symmetric(vertical: 28),
@@ -38,7 +40,8 @@ class MultimetroDisplayWidget extends StatelessWidget {
         children: [
           Text(texto, style: AppTheme.textoDisplay),
           const SizedBox(height: 4),
-          Text(unidad, style: TextStyle(color: AppTheme.verdeFosforo.withOpacity(0.7))),
+          Text(unidad,
+              style: TextStyle(color: AppTheme.verdeFosforo.withOpacity(0.7))),
           if (resultado != null && resultado!.enRango) ...[
             const SizedBox(height: 6),
             Text(

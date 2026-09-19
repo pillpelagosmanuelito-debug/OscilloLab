@@ -38,7 +38,8 @@ class MultimetroNotifier extends Notifier<MultimetroState> {
   @override
   MultimetroState build() {
     final EscenarioMultimetro primero = escenariosMultimetro.first;
-    return MultimetroState(escenario: primero, rangoSeleccionado: primero.rangos[1]);
+    return MultimetroState(
+        escenario: primero, rangoSeleccionado: primero.rangos[1]);
   }
 
   void elegirEscenario(EscenarioMultimetro escenario) {
@@ -49,7 +50,8 @@ class MultimetroNotifier extends Notifier<MultimetroState> {
   }
 
   void elegirRango(InstrumentRange rango) {
-    state = state.copyWith(rangoSeleccionado: rango, resultado: null, mensajeAsistente: null);
+    state = state.copyWith(
+        rangoSeleccionado: rango, resultado: null, mensajeAsistente: null);
   }
 
   void medir() {
@@ -57,7 +59,8 @@ class MultimetroNotifier extends Notifier<MultimetroState> {
       nombre: 'Multimetro digital',
       rango: state.rangoSeleccionado,
     );
-    final ResultadoMedicion resultado = instrumento.medir(state.escenario.valorReal);
+    final ResultadoMedicion resultado =
+        instrumento.medir(state.escenario.valorReal);
 
     final MensajeAsistente mensaje = !resultado.enRango
         ? AssistantEngine.sobrecarga(instrumento)
@@ -71,4 +74,5 @@ class MultimetroNotifier extends Notifier<MultimetroState> {
 }
 
 final NotifierProvider<MultimetroNotifier, MultimetroState> multimetroProvider =
-    NotifierProvider<MultimetroNotifier, MultimetroState>(MultimetroNotifier.new);
+    NotifierProvider<MultimetroNotifier, MultimetroState>(
+        MultimetroNotifier.new);

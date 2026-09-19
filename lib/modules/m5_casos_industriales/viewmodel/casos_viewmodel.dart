@@ -28,7 +28,8 @@ class CasoIndustrialState {
   final bool? accionCorrecta;
 
   bool get terminado => indice >= casosIndustriales.length;
-  CasoIndustrial? get casoActual => terminado ? null : casosIndustriales[indice];
+  CasoIndustrial? get casoActual =>
+      terminado ? null : casosIndustriales[indice];
 
   CasoIndustrialState copyWith({
     int? indice,
@@ -56,7 +57,8 @@ class CasoIndustrialState {
 class CasosIndustrialesNotifier extends Notifier<CasoIndustrialState> {
   @override
   CasoIndustrialState build() {
-    return const CasoIndustrialState(indice: 0, puntaje: 0, paso: PasoCaso.seleccionInstrumento);
+    return const CasoIndustrialState(
+        indice: 0, puntaje: 0, paso: PasoCaso.seleccionInstrumento);
   }
 
   void elegirInstrumento(String idElegido) {
@@ -73,9 +75,11 @@ class CasosIndustrialesNotifier extends Notifier<CasoIndustrialState> {
   void medir() {
     final CasoIndustrial caso = state.casoActual!;
     final InstrumentRange rango = caso.rango;
-    final InstrumentModel instrumento = InstrumentModel(nombre: 'Instrumento de campo', rango: rango);
+    final InstrumentModel instrumento =
+        InstrumentModel(nombre: 'Instrumento de campo', rango: rango);
     final ResultadoMedicion resultado = instrumento.medir(caso.valorReal);
-    state = state.copyWith(resultadoMedicion: resultado, paso: PasoCaso.decisionAccion);
+    state = state.copyWith(
+        resultadoMedicion: resultado, paso: PasoCaso.decisionAccion);
   }
 
   void elegirAccion(String idAccion) {
@@ -98,9 +102,12 @@ class CasosIndustrialesNotifier extends Notifier<CasoIndustrialState> {
   }
 
   void reiniciar() {
-    state = const CasoIndustrialState(indice: 0, puntaje: 0, paso: PasoCaso.seleccionInstrumento);
+    state = const CasoIndustrialState(
+        indice: 0, puntaje: 0, paso: PasoCaso.seleccionInstrumento);
   }
 }
 
-final NotifierProvider<CasosIndustrialesNotifier, CasoIndustrialState> casosIndustrialesProvider =
-    NotifierProvider<CasosIndustrialesNotifier, CasoIndustrialState>(CasosIndustrialesNotifier.new);
+final NotifierProvider<CasosIndustrialesNotifier, CasoIndustrialState>
+    casosIndustrialesProvider =
+    NotifierProvider<CasosIndustrialesNotifier, CasoIndustrialState>(
+        CasosIndustrialesNotifier.new);

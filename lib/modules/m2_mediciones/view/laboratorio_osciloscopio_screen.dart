@@ -14,7 +14,8 @@ class LaboratorioOsciloscopioScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final OsciloscopioState estado = ref.watch(osciloscopioProvider);
-    final OsciloscopioNotifier notifier = ref.read(osciloscopioProvider.notifier);
+    final OsciloscopioNotifier notifier =
+        ref.read(osciloscopioProvider.notifier);
 
     return Scaffold(
       appBar: AppBar(title: const Text('Laboratorio · Osciloscopio')),
@@ -23,9 +24,13 @@ class LaboratorioOsciloscopioScreen extends ConsumerWidget {
         children: [
           DropdownButtonFormField<EscenarioOsciloscopio>(
             value: estado.escenario,
-            decoration: const InputDecoration(labelText: 'Escenario de medicion'),
+            decoration:
+                const InputDecoration(labelText: 'Escenario de medicion'),
             items: escenariosOsciloscopio
-                .map((e) => DropdownMenuItem(value: e, child: Text(e.descripcion, overflow: TextOverflow.ellipsis)))
+                .map((e) => DropdownMenuItem(
+                    value: e,
+                    child:
+                        Text(e.descripcion, overflow: TextOverflow.ellipsis)))
                 .toList(),
             onChanged: (e) {
               if (e != null) notifier.elegirEscenario(e);
@@ -68,7 +73,9 @@ class LaboratorioOsciloscopioScreen extends ConsumerWidget {
           if (estado.resultadoVpp != null && estado.resultadoVpp!.enRango) ...[
             const SizedBox(height: 12),
             OutlinedButton(
-              onPressed: () => ref.read(progresoProvider.notifier).registrarEjercicioCompletado('m2'),
+              onPressed: () => ref
+                  .read(progresoProvider.notifier)
+                  .registrarEjercicioCompletado('m2'),
               child: const Text('Marcar medicion como completada'),
             ),
           ],
@@ -103,7 +110,9 @@ class _ResultadoCard extends StatelessWidget {
             Text(titulo, style: Theme.of(context).textTheme.labelLarge),
             const SizedBox(height: 8),
             Text(
-              r == null ? '—' : (ok ? '${r.valor.toStringAsFixed(2)} $unidad' : 'OL'),
+              r == null
+                  ? '—'
+                  : (ok ? '${r.valor.toStringAsFixed(2)} $unidad' : 'OL'),
               style: Theme.of(context).textTheme.titleMedium,
             ),
             if (ok)

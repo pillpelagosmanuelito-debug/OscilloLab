@@ -23,10 +23,12 @@ void main() {
 
     test('combina incertidumbres absolutas en cuadratura para suma/resta', () {
       final double u = ErrorPropagation.combinarSumaResta(0.03, 0.04);
-      expect(u, closeTo(0.05, 0.0001)); // 3-4-5 triangulo: sqrt(0.03^2+0.04^2)=0.05
+      expect(u,
+          closeTo(0.05, 0.0001)); // 3-4-5 triangulo: sqrt(0.03^2+0.04^2)=0.05
     });
 
-    test('clasifica como aleatorio cuando el promedio reduce la discrepancia', () {
+    test('clasifica como aleatorio cuando el promedio reduce la discrepancia',
+        () {
       final String clasificacion = ErrorPropagation.clasificarError(
         desviacionUnaLectura: 0.5,
         desviacionPromedioNLecturas: 0.05,
@@ -34,7 +36,9 @@ void main() {
       expect(clasificacion, 'aleatorio');
     });
 
-    test('clasifica como sistematico cuando el promedio no reduce la discrepancia', () {
+    test(
+        'clasifica como sistematico cuando el promedio no reduce la discrepancia',
+        () {
       final String clasificacion = ErrorPropagation.clasificarError(
         desviacionUnaLectura: 0.5,
         desviacionPromedioNLecturas: 0.48,

@@ -24,9 +24,13 @@ class LaboratorioMultimetroScreen extends ConsumerWidget {
         children: [
           DropdownButtonFormField<EscenarioMultimetro>(
             value: estado.escenario,
-            decoration: const InputDecoration(labelText: 'Escenario de medicion'),
+            decoration:
+                const InputDecoration(labelText: 'Escenario de medicion'),
             items: escenariosMultimetro
-                .map((e) => DropdownMenuItem(value: e, child: Text(e.descripcion, overflow: TextOverflow.ellipsis)))
+                .map((e) => DropdownMenuItem(
+                    value: e,
+                    child:
+                        Text(e.descripcion, overflow: TextOverflow.ellipsis)))
                 .toList(),
             onChanged: (e) {
               if (e != null) notifier.elegirEscenario(e);
@@ -59,7 +63,9 @@ class LaboratorioMultimetroScreen extends ConsumerWidget {
           if (estado.resultado != null && estado.resultado!.enRango) ...[
             const SizedBox(height: 12),
             OutlinedButton(
-              onPressed: () => ref.read(progresoProvider.notifier).registrarEjercicioCompletado('m2'),
+              onPressed: () => ref
+                  .read(progresoProvider.notifier)
+                  .registrarEjercicioCompletado('m2'),
               child: const Text('Marcar medicion como completada'),
             ),
           ],

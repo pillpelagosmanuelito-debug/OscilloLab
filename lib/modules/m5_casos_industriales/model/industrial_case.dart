@@ -45,7 +45,9 @@ class CasoIndustrial {
   final String justificacionAccion;
 
   bool debeAlertar(double lectura) {
-    return alertaSiMayorQueUmbral ? lectura > umbralAccion : lectura < umbralAccion;
+    return alertaSiMayorQueUmbral
+        ? lectura > umbralAccion
+        : lectura < umbralAccion;
   }
 }
 
@@ -65,12 +67,18 @@ const List<CasoIndustrial> casosIndustriales = [
         'temperatura; un osciloscopio o un multimetro en voltaje no miden '
         'esa magnitud sin un sensor intermedio.',
     valorReal: 92.0,
-    rango: InstrumentRange(etiqueta: '150 °C', magnitud: Magnitud.temperatura, valorMaximo: 150, ruidoSigma: 0.4, resolucionDecimales: 1),
+    rango: InstrumentRange(
+        etiqueta: '150 °C',
+        magnitud: Magnitud.temperatura,
+        valorMaximo: 150,
+        ruidoSigma: 0.4,
+        resolucionDecimales: 1),
     umbralAccion: 85.0,
     alertaSiMayorQueUmbral: true,
     opcionesAccion: [
       MapEntry('continuar', 'Autorizar otra hora de operacion sin cambios'),
-      MapEntry('detener', 'Detener el motor y dejarlo enfriar antes de continuar'),
+      MapEntry(
+          'detener', 'Detener el motor y dejarlo enfriar antes de continuar'),
       MapEntry('ignorar', 'Ignorar la lectura, es solo una fluctuacion'),
     ],
     accionCorrectaId: 'detener',
@@ -93,12 +101,18 @@ const List<CasoIndustrial> casosIndustriales = [
         'ocultar el rizado de alta frecuencia; solo el osciloscopio '
         'muestra la componente AC superpuesta en el tiempo.',
     valorReal: 0.62,
-    rango: InstrumentRange(etiqueta: '1 Vpp', magnitud: Magnitud.amplitudPicoPico, valorMaximo: 1, ruidoSigma: 0.006, resolucionDecimales: 3),
+    rango: InstrumentRange(
+        etiqueta: '1 Vpp',
+        magnitud: Magnitud.amplitudPicoPico,
+        valorMaximo: 1,
+        ruidoSigma: 0.006,
+        resolucionDecimales: 3),
     umbralAccion: 0.3,
     alertaSiMayorQueUmbral: true,
     opcionesAccion: [
       MapEntry('continuar', 'Rizado normal, no requiere accion'),
-      MapEntry('revisar_filtro', 'Revisar/reemplazar el capacitor de filtro de salida'),
+      MapEntry('revisar_filtro',
+          'Revisar/reemplazar el capacitor de filtro de salida'),
       MapEntry('cambiar_plc', 'Cambiar el PLC, el problema es del controlador'),
     ],
     accionCorrectaId: 'revisar_filtro',
@@ -120,7 +134,12 @@ const List<CasoIndustrial> casosIndustriales = [
         'sensor y la superficie del liquido; eso es exactamente lo que '
         'entrega un sensor ultrasonico.',
     valorReal: 4.5,
-    rango: InstrumentRange(etiqueta: '50 cm', magnitud: Magnitud.distancia, valorMaximo: 50, ruidoSigma: 0.15, resolucionDecimales: 1),
+    rango: InstrumentRange(
+        etiqueta: '50 cm',
+        magnitud: Magnitud.distancia,
+        valorMaximo: 50,
+        ruidoSigma: 0.15,
+        resolucionDecimales: 1),
     umbralAccion: 6.0,
     alertaSiMayorQueUmbral: false,
     opcionesAccion: [

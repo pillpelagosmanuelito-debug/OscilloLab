@@ -12,8 +12,10 @@ class ErrorPropagation {
   /// Incertidumbre absoluta de una suma o resta: se combinan en
   /// cuadratura las incertidumbres absolutas.
   /// U(a±b) = sqrt(Ua^2 + Ub^2)
-  static double combinarSumaResta(double incertidumbreA, double incertidumbreB) {
-    return sqrt(incertidumbreA * incertidumbreA + incertidumbreB * incertidumbreB);
+  static double combinarSumaResta(
+      double incertidumbreA, double incertidumbreB) {
+    return sqrt(
+        incertidumbreA * incertidumbreA + incertidumbreB * incertidumbreB);
   }
 
   /// Incertidumbre relativa de un producto o cociente: se combinan en
@@ -46,7 +48,8 @@ class ErrorPropagation {
     required double desviacionUnaLectura,
     required double desviacionPromedioNLecturas,
   }) {
-    final double reduccion = 1 - (desviacionPromedioNLecturas / desviacionUnaLectura).abs();
+    final double reduccion =
+        1 - (desviacionPromedioNLecturas / desviacionUnaLectura).abs();
     return reduccion > 0.5 ? 'aleatorio' : 'sistematico';
   }
 }

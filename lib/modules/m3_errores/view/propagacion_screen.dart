@@ -36,7 +36,10 @@ class _PropagacionScreenState extends ConsumerState<PropagacionScreen> {
             value: estado.caso,
             decoration: const InputDecoration(labelText: 'Caso'),
             items: casosPropagacion
-                .map((c) => DropdownMenuItem(value: c, child: Text(c.descripcion, overflow: TextOverflow.ellipsis)))
+                .map((c) => DropdownMenuItem(
+                    value: c,
+                    child:
+                        Text(c.descripcion, overflow: TextOverflow.ellipsis)))
                 .toList(),
             onChanged: (c) {
               if (c != null) {
@@ -53,8 +56,10 @@ class _PropagacionScreenState extends ConsumerState<PropagacionScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Voltaje medido: ${estado.medicionV.textoConIncertidumbre(2)} V'),
-                  Text('Corriente medida: ${estado.medicionI.textoConIncertidumbre(3)} A'),
+                  Text(
+                      'Voltaje medido: ${estado.medicionV.textoConIncertidumbre(2)} V'),
+                  Text(
+                      'Corriente medida: ${estado.medicionI.textoConIncertidumbre(3)} A'),
                   const SizedBox(height: 8),
                   const Text(
                     'Calcula P = V·I y su incertidumbre combinada U(P). '
@@ -81,10 +86,13 @@ class _PropagacionScreenState extends ConsumerState<PropagacionScreen> {
           const SizedBox(height: 16),
           ElevatedButton(
             onPressed: () {
-              final double? p = double.tryParse(_potenciaCtrl.text.replaceAll(',', '.'));
-              final double? u = double.tryParse(_incertidumbreCtrl.text.replaceAll(',', '.'));
+              final double? p =
+                  double.tryParse(_potenciaCtrl.text.replaceAll(',', '.'));
+              final double? u =
+                  double.tryParse(_incertidumbreCtrl.text.replaceAll(',', '.'));
               if (p != null && u != null) {
-                notifier.evaluar(potenciaIngresada: p, incertidumbreIngresada: u);
+                notifier.evaluar(
+                    potenciaIngresada: p, incertidumbreIngresada: u);
               }
             },
             child: const Text('Verificar'),
@@ -100,10 +108,12 @@ class _PropagacionScreenState extends ConsumerState<PropagacionScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('P correcto: ${estado.potenciaCorrecta!.toStringAsFixed(3)} W '
+                    Text(
+                        'P correcto: ${estado.potenciaCorrecta!.toStringAsFixed(3)} W '
                         '(${estado.aciertoValor! ? "tu respuesta esta bien" : "revisa tu calculo"})'),
                     const SizedBox(height: 4),
-                    Text('U(P) correcto: ${estado.incertidumbreCorrecta!.toStringAsFixed(4)} W '
+                    Text(
+                        'U(P) correcto: ${estado.incertidumbreCorrecta!.toStringAsFixed(4)} W '
                         '(${estado.aciertoIncertidumbre! ? "tu respuesta esta bien" : "revisa la combinacion en cuadratura"})'),
                   ],
                 ),

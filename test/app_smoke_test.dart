@@ -3,7 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:oscillolab/app.dart';
 
 void main() {
-  testWidgets('OscilloLabApp arranca y muestra la pantalla de Inicio', (tester) async {
+  testWidgets('OscilloLabApp arranca y muestra la pantalla de Inicio',
+      (tester) async {
     await tester.pumpWidget(const ProviderScope(child: OscilloLabApp()));
     await tester.pumpAndSettle();
 
@@ -15,7 +16,9 @@ void main() {
     expect(find.text('5 · Casos industriales'), findsOneWidget);
   });
 
-  testWidgets('la barra de navegacion inferior cambia entre Inicio/Progreso/Asistente', (tester) async {
+  testWidgets(
+      'la barra de navegacion inferior cambia entre Inicio/Progreso/Asistente',
+      (tester) async {
     await tester.pumpWidget(const ProviderScope(child: OscilloLabApp()));
     await tester.pumpAndSettle();
 

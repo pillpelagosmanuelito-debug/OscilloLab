@@ -83,5 +83,7 @@ class CalibracionNotifier extends Notifier<CalibracionState> {
   }
 }
 
-final NotifierProvider<CalibracionNotifier, CalibracionState> calibracionProvider =
-    NotifierProvider<CalibracionNotifier, CalibracionState>(CalibracionNotifier.new);
+final NotifierProvider<CalibracionNotifier, CalibracionState>
+    calibracionProvider =
+    NotifierProvider<CalibracionNotifier, CalibracionState>(
+        CalibracionNotifier.new);

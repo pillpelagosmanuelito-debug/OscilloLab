@@ -25,7 +25,8 @@ class MedicionesScreen extends StatelessWidget {
               subtitle: const Text('Voltaje DC, corriente y resistencia'),
               trailing: const Icon(Icons.chevron_right),
               onTap: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const LaboratorioMultimetroScreen()),
+                MaterialPageRoute(
+                    builder: (_) => const LaboratorioMultimetroScreen()),
               ),
             ),
           ),
@@ -33,10 +34,12 @@ class MedicionesScreen extends StatelessWidget {
             child: ListTile(
               leading: const Icon(Icons.monitor_heart_outlined),
               title: const Text('Laboratorio de osciloscopio'),
-              subtitle: const Text('Amplitud y frecuencia de senales periodicas'),
+              subtitle:
+                  const Text('Amplitud y frecuencia de senales periodicas'),
               trailing: const Icon(Icons.chevron_right),
               onTap: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const LaboratorioOsciloscopioScreen()),
+                MaterialPageRoute(
+                    builder: (_) => const LaboratorioOsciloscopioScreen()),
               ),
             ),
           ),

@@ -21,7 +21,8 @@ class InstrumentoDetalleScreen extends StatelessWidget {
                   ?.copyWith(color: Theme.of(context).colorScheme.secondary)),
           const SizedBox(height: 12),
           _Seccion(titulo: 'Funcionamiento', cuerpo: ficha.funcionamiento),
-          _SeccionLista(titulo: 'Caracteristicas', items: ficha.caracteristicas),
+          _SeccionLista(
+              titulo: 'Caracteristicas', items: ficha.caracteristicas),
           _SeccionLista(titulo: 'Aplicaciones', items: ficha.aplicaciones),
           _SeccionLista(
             titulo: 'Errores comunes',

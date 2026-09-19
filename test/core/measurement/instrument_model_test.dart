@@ -50,7 +50,8 @@ void main() {
         etiqueta: '20 V',
         magnitud: Magnitud.voltajeDc,
         valorMaximo: 20,
-        ruidoSigma: 0.0001, // ruido despreciable para aislar el efecto sistematico
+        ruidoSigma:
+            0.0001, // ruido despreciable para aislar el efecto sistematico
         resolucionDecimales: 4,
       );
       final InstrumentModel descalibrado = InstrumentModel(

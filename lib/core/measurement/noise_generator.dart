@@ -6,7 +6,8 @@ import 'dart:math';
 /// Se usa una unica instancia con semilla opcional para que las pruebas
 /// unitarias sean reproducibles; en produccion se usa sin semilla.
 class NoiseGenerator {
-  NoiseGenerator({int? seed}) : _random = seed != null ? Random(seed) : Random();
+  NoiseGenerator({int? seed})
+      : _random = seed != null ? Random(seed) : Random();
 
   final Random _random;
   double? _spare;

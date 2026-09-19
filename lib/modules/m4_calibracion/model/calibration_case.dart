@@ -38,28 +38,46 @@ class CasoCalibracion {
 const List<CasoCalibracion> casosCalibracion = [
   CasoCalibracion(
     id: 'multimetro_revision_anual',
-    descripcion: 'Multimetro de planta en su revision periodica anual, contra patron de voltaje trazable.',
+    descripcion:
+        'Multimetro de planta en su revision periodica anual, contra patron de voltaje trazable.',
     patronBajo: 2.0,
     patronAlto: 18.0,
-    rango: InstrumentRange(etiqueta: '20 V', magnitud: Magnitud.voltajeDc, valorMaximo: 20, ruidoSigma: 0.008, resolucionDecimales: 2),
+    rango: InstrumentRange(
+        etiqueta: '20 V',
+        magnitud: Magnitud.voltajeDc,
+        valorMaximo: 20,
+        ruidoSigma: 0.008,
+        resolucionDecimales: 2),
     gananciaOculta: 1.05,
     offsetOculto: 0.15,
   ),
   CasoCalibracion(
     id: 'sensor_temperatura_nuevo',
-    descripcion: 'Sensor de temperatura recien instalado, verificacion inicial contra bano termostatico patron.',
+    descripcion:
+        'Sensor de temperatura recien instalado, verificacion inicial contra bano termostatico patron.',
     patronBajo: 20.0,
     patronAlto: 90.0,
-    rango: InstrumentRange(etiqueta: '150 °C', magnitud: Magnitud.temperatura, valorMaximo: 150, ruidoSigma: 0.3, resolucionDecimales: 1),
+    rango: InstrumentRange(
+        etiqueta: '150 °C',
+        magnitud: Magnitud.temperatura,
+        valorMaximo: 150,
+        ruidoSigma: 0.3,
+        resolucionDecimales: 1),
     gananciaOculta: 1.0,
     offsetOculto: 0.02,
   ),
   CasoCalibracion(
     id: 'pinza_amperometrica_sospechosa',
-    descripcion: 'Pinza amperometrica que dio lecturas inconsistentes en campo; se revisa contra fuente de corriente patron.',
+    descripcion:
+        'Pinza amperometrica que dio lecturas inconsistentes en campo; se revisa contra fuente de corriente patron.',
     patronBajo: 1.0,
     patronAlto: 15.0,
-    rango: InstrumentRange(etiqueta: '20 A', magnitud: Magnitud.corrienteDc, valorMaximo: 20, ruidoSigma: 0.02, resolucionDecimales: 2),
+    rango: InstrumentRange(
+        etiqueta: '20 A',
+        magnitud: Magnitud.corrienteDc,
+        valorMaximo: 20,
+        ruidoSigma: 0.02,
+        resolucionDecimales: 2),
     gananciaOculta: 0.90,
     offsetOculto: -0.05,
   ),

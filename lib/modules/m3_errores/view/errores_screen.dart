@@ -50,7 +50,8 @@ class _Ejercicio extends StatelessWidget {
           Card(
             child: Padding(
               padding: const EdgeInsets.all(16),
-              child: Text(caso.descripcion, style: Theme.of(context).textTheme.titleMedium),
+              child: Text(caso.descripcion,
+                  style: Theme.of(context).textTheme.titleMedium),
             ),
           ),
           const SizedBox(height: 16),
@@ -62,22 +63,28 @@ class _Ejercicio extends StatelessWidget {
             )
           else ...[
             Text('Lectura unica: ${estado.lecturaUnica!.toStringAsFixed(3)}'),
-            Text('Promedio de 30 lecturas: ${estado.promedioLecturas!.toStringAsFixed(3)}'),
+            Text(
+                'Promedio de 30 lecturas: ${estado.promedioLecturas!.toStringAsFixed(3)}'),
             const SizedBox(height: 16),
-            const Text('¿El error dominante de este instrumento es sistematico o aleatorio?'),
+            const Text(
+                '¿El error dominante de este instrumento es sistematico o aleatorio?'),
             const SizedBox(height: 12),
             Row(
               children: [
                 Expanded(
                   child: OutlinedButton(
-                    onPressed: estado.respondido ? null : () => notifier.responder('sistematico'),
+                    onPressed: estado.respondido
+                        ? null
+                        : () => notifier.responder('sistematico'),
                     child: const Text('Sistematico'),
                   ),
                 ),
                 const SizedBox(width: 12),
                 Expanded(
                   child: OutlinedButton(
-                    onPressed: estado.respondido ? null : () => notifier.responder('aleatorio'),
+                    onPressed: estado.respondido
+                        ? null
+                        : () => notifier.responder('aleatorio'),
                     child: const Text('Aleatorio'),
                   ),
                 ),
@@ -88,7 +95,9 @@ class _Ejercicio extends StatelessWidget {
             const SizedBox(height: 16),
             TarjetaAsistenteWidget(mensaje: estado.mensajeAsistente!),
             const SizedBox(height: 16),
-            ElevatedButton(onPressed: notifier.siguiente, child: const Text('Siguiente caso')),
+            ElevatedButton(
+                onPressed: notifier.siguiente,
+                child: const Text('Siguiente caso')),
           ],
         ],
       ),
@@ -97,7 +106,8 @@ class _Ejercicio extends StatelessWidget {
 }
 
 class _ResultadoFinal extends StatelessWidget {
-  const _ResultadoFinal({required this.estado, required this.notifier, required this.ref});
+  const _ResultadoFinal(
+      {required this.estado, required this.notifier, required this.ref});
   final ErroresState estado;
   final ErroresNotifier notifier;
   final WidgetRef ref;
@@ -118,7 +128,9 @@ class _ResultadoFinal extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 if (estado.correctas >= 2) {
-                  ref.read(progresoProvider.notifier).registrarEjercicioCompletado('m3');
+                  ref
+                      .read(progresoProvider.notifier)
+                      .registrarEjercicioCompletado('m3');
                 }
                 notifier.reiniciar();
               },

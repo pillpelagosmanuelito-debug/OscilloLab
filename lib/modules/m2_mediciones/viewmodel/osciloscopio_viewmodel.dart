@@ -46,7 +46,8 @@ class OsciloscopioNotifier extends Notifier<OsciloscopioState> {
   @override
   OsciloscopioState build() {
     final EscenarioOsciloscopio primero = escenariosOsciloscopio.first;
-    return OsciloscopioState(escenario: primero, muestras: _generarMuestras(primero));
+    return OsciloscopioState(
+        escenario: primero, muestras: _generarMuestras(primero));
   }
 
   /// Genera 200 muestras de la senal para dibujarla en pantalla, con el
@@ -59,13 +60,15 @@ class OsciloscopioNotifier extends Notifier<OsciloscopioState> {
     final double sigmaVisual = escenario.rangoVoltaje.ruidoSigma * 3;
     return List<double>.generate(n, (i) {
       final double t = (i / n) * ciclosVisibles * 2 * pi;
-      final double base = escenario.formaOnda == 'seno' ? sin(t) : (sin(t) >= 0 ? 1.0 : -1.0);
+      final double base =
+          escenario.formaOnda == 'seno' ? sin(t) : (sin(t) >= 0 ? 1.0 : -1.0);
       return base * amplitud + _ruido.gaussian(sigmaVisual);
     });
   }
 
   void elegirEscenario(EscenarioOsciloscopio escenario) {
-    state = OsciloscopioState(escenario: escenario, muestras: _generarMuestras(escenario));
+    state = OsciloscopioState(
+        escenario: escenario, muestras: _generarMuestras(escenario));
   }
 
   void medirVpp() {
@@ -73,7 +76,8 @@ class OsciloscopioNotifier extends Notifier<OsciloscopioState> {
       nombre: 'Osciloscopio (Vpp)',
       rango: state.escenario.rangoVoltaje,
     );
-    final ResultadoMedicion resultado = instrumento.medir(state.escenario.amplitudPicoPicoReal);
+    final ResultadoMedicion resultado =
+        instrumento.medir(state.escenario.amplitudPicoPicoReal);
     final MensajeAsistente mensaje = !resultado.enRango
         ? AssistantEngine.sobrecarga(instrumento)
         : AssistantEngine.evaluarUsoDeRango(
@@ -88,10 +92,13 @@ class OsciloscopioNotifier extends Notifier<OsciloscopioState> {
       nombre: 'Osciloscopio (frecuencia)',
       rango: state.escenario.rangoFrecuencia,
     );
-    final ResultadoMedicion resultado = instrumento.medir(state.escenario.frecuenciaHzReal);
+    final ResultadoMedicion resultado =
+        instrumento.medir(state.escenario.frecuenciaHzReal);
     state = state.copyWith(resultadoFrecuencia: resultado);
   }
 }
 
-final NotifierProvider<OsciloscopioNotifier, OsciloscopioState> osciloscopioProvider =
-    NotifierProvider<OsciloscopioNotifier, OsciloscopioState>(OsciloscopioNotifier.new);
+final NotifierProvider<OsciloscopioNotifier, OsciloscopioState>
+    osciloscopioProvider =
+    NotifierProvider<OsciloscopioNotifier, OsciloscopioState>(
+        OsciloscopioNotifier.new);
