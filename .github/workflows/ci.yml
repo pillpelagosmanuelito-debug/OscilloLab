@@ -65,6 +65,14 @@ jobs:
       - name: Generar carpetas nativas (android/ios)
         run: flutter create --platforms=android,ios --org com.oscillolab.app --project-name oscillolab .
 
+      # El plugin de Kotlin 1.8.22 que trae la plantilla de `flutter create`
+      # en Flutter 3.24 es incompatible con el kotlin-stdlib 1.9.x que usan
+      # los plugins de Flutter actuales (p. ej. shared_preferences_android),
+      # lo que rompe la compilacion con errores de "incompatible metadata
+      # version". Se sube a una version de Kotlin compatible con Gradle 8.3.
+      - name: Actualizar version de Kotlin
+        run: sed -i 's/org.jetbrains.kotlin.android" version "[^"]*"/org.jetbrains.kotlin.android" version "1.9.24"/' android/settings.gradle
+
       - name: Obtener dependencias
         run: flutter pub get
 
